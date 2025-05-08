@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Desplegable</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            margin: auto;
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .nav>li {
+            float: left;
+        }
+
+        .nav li a {
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 12px;
+            display: block;
+        }
+
+        .nav li a:hover {
+            background-color: #434343;
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 140px;
+        }
+
+        .nav li:hover>ul {
+            display: block;
+        }
+
+        .nav li ul li {
+            position: relative;
+        }
+
+        .nav li ul li ul {
+            right: -140px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <ul class="nav">
+            <li><a>SELECT</a>
+                <ul>
+                    <li><a href="../SELECT/FSCentrosVerificacion.html">Centros de Verificación</a></li>
+                    <li><a href="../SELECT/FSConductores.html">Conductores</a></li>
+                    <li><a href="../SELECT/FSDomicilios.html">Domicilios</a></li>
+                    <li><a href="../SELECT/FSLicencias.html">Licencias</a></li>
+                    <li><a href="../SELECT/FSMultas.html">Multas</a></li>
+                    <li><a href="../SELECT/FSOficiales.html">Oficiales</a></li>
+                    <li><a href="../SELECT/FSPagos.html">Pagos</a></li>
+                    <li><a href="../SELECT/FSPropietarios.html">Propietarios</a></li>
+                    <li><a href="../SELECT/FSTarjetasCirculacion.html">Tarjetas de Circulación</a></li>
+                    <li><a href="../SELECT/FSTarjetasVerificacion.html">Tarjetas de Verificación</a></li>
+                    <li><a href="../SELECT/FSVehiculos.html">Vehículos</a></li>
+                </ul>
+            </li>
+            <li><a>INSERT</a>
+                <ul>
+                    <li><a href="../INSERT/FCentrosVerificacion.html">Centros de Verificación</a></li>
+                    <li><a href="../INSERT/FConductores.html">Conductores</a></li>
+                    <li><a href="../INSERT/FDomicilios.html">Domicilios</a></li>
+                    <li><a href="../INSERT/FLicencias.html">Licencias</a></li>
+                    <li><a href="../INSERT/FMultas.html">Multas</a></li>
+                    <li><a href="../INSERT/FOficiales.html">Oficiales</a></li>
+                    <li><a href="../INSERT/FPagos.html">Pagos</a></li>
+                    <li><a href="../INSERT/FPropietarios.html">Propietarios</a></li>
+                    <li><a href="../INSERT/FTarjetasCirculacion.html">Tarjetas de Circulación</a></li>
+                    <li><a href="../INSERT/FTarjetasVerificacion.html">Tarjetas de Verificación</a></li>
+                    <li><a href="../INSERT/FVehiculos.html">Vehículos</a></li>
+                </ul>
+            </li>
+            <li><a>UPDATE</a>
+                <ul>
+                    <li><a href="../UPDATE/FUCentrosVerificacion.php">Centros de Verificación</a></li>
+                    <li><a href="../UPDATE/FUConductores.php">Conductores</a></li>
+                    <li><a href="../UPDATE/FUDomicilios.php">Domicilios</a></li>
+                    <li><a href="../UPDATE/FULicencias.php">Licencias</a></li>
+                    <li><a href="../UPDATE/FUMultas.php">Multas</a></li>
+                    <li><a href="../UPDATE/FUOficiales.php">Oficiales</a></li>
+                    <li><a href="../UPDATE/FUPagos.php">Pagos</a></li>
+                    <li><a href="../UPDATE/FUPropietarios.php">Propietarios</a></li>
+                    <li><a href="../UPDATE/FUTarjetasCirculacion.php">Tarjetas de Circulación</a></li>
+                    <li><a href="../UPDATE/FUTarjetasVerificacion.php">Tarjetas de Verificación</a></li>
+                    <li><a href="../UPDATE/FUVehiculos.php">Vehículos</a></li>
+                </ul>
+            </li>
+            <li><a>DELETE</a>
+                <ul>
+                    <li><a href="../DELETE/FDCentrosVerificacion.html">Centros de Verificación</a></li>
+                    <li><a href="../DELETE/FDConductores.html">Conductores</a></li>
+                    <li><a href="../DELETE/FDDomicilios.html">Domicilios</a></li>
+                    <li><a href="../DELETE/FDLicencias.html">Licencias</a></li>
+                    <li><a href="../DELETE/FDMultas.html">Multas</a></li>
+                    <li><a href="../DELETE/FDOficiales.html">Oficiales</a></li>
+                    <li><a href="../DELETE/FDPagos.html">Pagos</a></li>
+                    <li><a href="../DELETE/FDPropietarios.html">Propietarios</a></li>
+                    <li><a href="../DELETE/FDTarjetasCirculacion.html">Tarjetas de Circulación</a></li>
+                    <li><a href="../DELETE/FDTarjetasVerificacion.html">Tarjetas de Verificación</a></li>
+                    <li><a href="../DELETE/FDVehiculos.html">Vehículos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos</title>
+</head>
+
+<body>
+    <label><strong>Pagos</strong></label>
+    <form method="post" action="IPagos.php">
+        <label>IdPago</label>
+        <br>
+        <input type="number" name="IdPago" id="IdPago" required="required">
+        <br>
+        <label>Nombre</label>
+        <br>
+        <input type="text" name="Nombre" id="Nombre" required="required">
+        <br>
+        <label>Apellido</label>
+        <br>
+        <input type="text" name="Apellido" id="Apellido" required="required">
+        <br>
+        <label>FechaNacimiento</label>
+        <br>
+        <input type="date" name="FechaNacimiento" id="FechaNacimiento" required="required">
+        <br>
+        <label>FechaExpedicion</label>
+        <br>
+        <input type="date" name="FechaExpedicion" id="FechaExpedicion" required="required">
+        <br>
+        <label>FechaValidacion</label>
+        <br>
+        <input type="date" name="FechaValidacion" id="FechaValidacion" required="required">
+        <br>
+        <label>Monto</label>
+        <br>
+        <input type="number" name="Monto" id="Monto" required="required">
+        <br>
+        <label>Firma</label>
+        <br>
+        <input type="text" name="Firma" id="Firma" required="required">
+        <br>
+        <label>FolioTarjetaCirculacion</label>
+        <br>
+        <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required="required">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
