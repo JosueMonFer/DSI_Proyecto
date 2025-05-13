@@ -9,7 +9,7 @@
 
 <body>
     <label><strong>Licencias</strong></label>
-    <form method="post" action="ILicencias.php">
+    <form method="post" action="ILicencias.php" enctype="multipart/form-data">
         <label>NoLicencia</label>
         <br>
         <input type="number" name="NoLicencia" id="NoLicencia" required="required">
@@ -20,7 +20,7 @@
         <br>
         <label>Foto</label>
         <br>
-        <input type="text" name="Foto" id="Foto" required="required">
+        <input type="file" name="Foto" id="Foto" accept="image/png, image/jpeg" required="required">
         <br>
         <label>Observacion</label>
         <br>
@@ -44,7 +44,7 @@
         <br>
         <label>Firma</label>
         <br>
-        <input type="text" name="Firma" id="Firma" required="required">
+        <input type="file" name="Firma" id="Firma" accept="image/png, image/jpeg" required="required">
         <br>
         <label>IdDomicilio</label>
         <br>
@@ -68,7 +68,7 @@
         <br>
         <label>IdConductor</label>
         <br>
-        <input type=" number" name="IdConductor" id="IdConductor" required="required">
+        <input type="number" name="IdConductor" id="IdConductor" required="required">
         <br>
         <input type="submit">
     </form>
