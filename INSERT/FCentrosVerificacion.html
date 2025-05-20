@@ -4,30 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centros de verificación</title>
+    <title>Registro de Centros</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>CentrosVerificacion</strong></label>
-    <form method="post" action="ICentrosVerificacion.php">
-        <label>IdCenVerificacion</label>
-        <br>
-        <input type="number" name="IdCenVerificacion" id="IdCenVerificacion" required="required">
-        <br>
-        <label>NoLinea</label>
-        <br>
-        <input type="number" name="NoLinea" id="NoLinea" required="required">
-        <br>
-        <label>Verificacion</label>
-        <br>
-        <input type="text" name="Verificacion" id="Verificacion" required="required">
-        <br>
-        <label>IdDomicilio</label>
-        <br>
-        <input type="number" name="IdDomicilio" id="IdDomicilio" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-building icono"></i>
+            Centros de Verificación
+        </h1>
+
+        <form method="post" action="ICentrosVerificacion.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">ID Centro</label>
+                <input type="number" name="IdCenVerificacion" id="IdCenVerificacion" required
+                    placeholder="Ingrese el ID del centro">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Línea</label>
+                <input type="number" name="NoLinea" id="NoLinea" required placeholder="Número de línea asignado">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Tipo de Verificación</label>
+                <input type="text" name="Verificacion" id="Verificacion" required
+                    placeholder="Ej: Verificación ambiental">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Domicilio</label>
+                <input type="number" name="IdDomicilio" id="IdDomicilio" required
+                    placeholder="ID del domicilio registrado">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-check-circle"></i>
+                Registrar Centro
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

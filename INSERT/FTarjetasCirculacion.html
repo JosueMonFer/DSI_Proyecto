@@ -4,54 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjetas de Circualción</title>
+    <title>Registro Tarjetas de Circulación</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Tarjetas Circulacion</strong></label>
-    <form method="post" action="ITarjetasCirculacion.php">
-        <label>FolioTarjetaCirculacion</label>
-        <br>
-        <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required="required">
-        <br>
-        <label>Holograma</label>
-        <br>
-        <input type="text" name="Holograma" id="Holograma" required="required">
-        <br>
-        <label>Vigencia</label>
-        <br>
-        <input type="date" name="Vigencia" id="Vigencia" required="required">
-        <br>
-        <label>Rfc</label>
-        <br>
-        <input type="text" name="Rfc" id="Rfc" required="required">
-        <br>
-        <label>Localidad</label>
-        <br>
-        <input type="text" name="Localidad" id="Localidad" required="required">
-        <br>
-        <label>Municipio</label>
-        <br>
-        <input type="text" name="Municipio" id="Municipio" required="required">
-        <br>
-        <label>FechaExpedicion</label>
-        <br>
-        <input type="date" name="FechaExpedicion" id="FechaExpedicion" required="required">
-        <br>
-        <label>CveVehicular</label>
-        <br>
-        <input type="number" name="CveVehicular" id="CveVehicular" required="required">
-        <br>
-        <label>IdVehiculo</label>
-        <br>
-        <input type="number" name="IdVehiculo" id="IdVehiculo" required="required">
-        <br>
-        <label>IdPropietario</label>
-        <br>
-        <input type="number" name="IdPropietario" id="IdPropietario" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-id-card icono"></i>
+            Registro de Tarjetas de Circulación
+        </h1>
+
+        <form method="post" action="ITarjetasCirculacion.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">Folio de Tarjeta</label>
+                <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required
+                    placeholder="Ingrese el folio de la tarjeta">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Holograma</label>
+                <input type="text" name="Holograma" id="Holograma" required
+                    placeholder="Ingrese el código del holograma">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Vigencia</label>
+                <input type="date" name="Vigencia" id="Vigencia" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">RFC</label>
+                <input type="text" name="Rfc" id="Rfc" required 
+                    placeholder="Ingrese el RFC">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Localidad</label>
+                <input type="text" name="Localidad" id="Localidad" required
+                    placeholder="Ingrese la localidad">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Municipio</label>
+                <input type="text" name="Municipio" id="Municipio" required
+                    placeholder="Ingrese el municipio">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Expedición</label>
+                <input type="date" name="FechaExpedicion" id="FechaExpedicion" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Clave Vehicular</label>
+                <input type="number" name="CveVehicular" id="CveVehicular" required
+                    placeholder="Ingrese la clave vehicular">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Vehículo</label>
+                <input type="number" name="IdVehiculo" id="IdVehiculo" required
+                    placeholder="Ingrese el ID del vehículo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Propietario</label>
+                <input type="number" name="IdPropietario" id="IdPropietario" required
+                    placeholder="Ingrese el ID del propietario">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-check-circle"></i>
+                Registrar Tarjeta
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

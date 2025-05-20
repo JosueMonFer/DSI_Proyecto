@@ -4,34 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propietarios</title>
+    <title>Registro de Propietarios</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Propietarios</strong></label>
-    <form method="get" action="IPropietarios.php">
-        <label>IdPropietario</label>
-        <br>
-        <input type="number" name="IdPropietario" id="IdPropietario" required="required">
-        <br>
-        <label>Nombre</label>
-        <br>
-        <input type=" text" name="Nombre" id="Nombre" required="required">
-        <br>
-        <label>Apellido</label>
-        <br>
-        <input type="text" name="Apellido" id="Apellido" required="required">
-        <br>
-        <label>AñoNacimiento</label>
-        <br>
-        <input type="date" name="AnioNacimiento" id="AnioNacimiento" required="required">
-        <br>
-        <label>IdVehiculo</label>
-        <br>
-        <input type=" number" name="IdVehiculo" id="IdVehiculo" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-user-tie icono"></i>
+            Registro de Propietarios
+        </h1>
+
+        <form method="get" action="IPropietarios.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">ID Propietario</label>
+                <input type="number" name="IdPropietario" id="IdPropietario" required
+                    placeholder="Ingrese el ID del propietario">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Nombre</label>
+                <input type="text" name="Nombre" id="Nombre" required
+                    placeholder="Ingrese el nombre">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Apellido</label>
+                <input type="text" name="Apellido" id="Apellido" required
+                    placeholder="Ingrese el apellido">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Año de Nacimiento</label>
+                <input type="date" name="AnioNacimiento" id="AnioNacimiento" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Vehículo</label>
+                <input type="number" name="IdVehiculo" id="IdVehiculo" required
+                    placeholder="Ingrese el ID del vehículo">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-check-circle"></i>
+                Registrar Propietario
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

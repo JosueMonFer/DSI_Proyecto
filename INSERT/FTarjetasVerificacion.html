@@ -4,74 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeras de Verificación</title>
+    <title>Tarjetas de Verificación</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Tarjetas Verificación</strong></label>
-    <form method="get" action="ITarjetasVerificacion.php">
-        <label>FolioVerificación</label>
-        <br>
-        <input type="number" name="FolioVerificacion" id="FolioVerificacion" required="required">
-        <br>
-        <label>IdVehículo</label>
-        <br>
-        <input type="number" name="IdVehiculo" id="IdVehiculo" required="required">
-        <br>
-        <label>Entidad</label>
-        <br>
-        <input type="text" name="Entidad" id="Entidad" required="required">
-        <br>
-        <label>Municipio</label>
-        <br>
-        <input type="text" name="Municipio" id="Municipio" required="required">
-        <br>
-        <label>IdCenVerificación</label>
-        <br>
-        <input type="number" name="IdCenVerificacion" id="IdCenVerificacion" required="required">
-        <br>
-        <label>NoLíneaVerificación</label>
-        <br>
-        <input type="number" name="NoLineaVerificacion" id="NoLineaVerificacion" required="required">
-        <br>
-        <label>TécnicoVerificador</label>
-        <br>
-        <input type="number" name="TecnicoVerificador" id="TecnicoVerificador" required="required">
-        <br>
-        <label>FechaExpedición</label>
-        <br>
-        <input type="date" name="FechaExpedicion" id="FechaExpedicion" required="required">
-        <br>
-        <label>HoraEntrada</label>
-        <br>
-        <input type="time" name="HoraEntrada" id="HoraEntrada" required="required">
-        <br>
-        <label>HoraSalida</label>
-        <br>
-        <input type="time" name="HoraSalida" id="HoraSalida" required="required">
-        <br>
-        <label>MotivoVerificación</label>
-        <br>
-        <input type="text" name="MotivoVerificacion" id="MotivoVerificacion" required="required">
-        <br>
-        <label>Semestre</label>
-        <br>
-        <input type="number" name="Semestre" id="Semestre" required="required">
-        <br>
-        <label>Vigencia</label>
-        <br>
-        <input type="date" name="Vigencia" id="Vigencia" required="required">
-        <br>
-        <label>CódigoBarra</label>
-        <br>
-        <input type="text" name="CodigoBarra" id="CodigoBarra" required="required">
-        <br>
-        <label>CódigoQR</label>
-        <br>
-        <input type="text" name="CodigoQR" id="CodigoQR" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-clipboard-check icono"></i>
+            Registro de Tarjetas de Verificación
+        </h1>
+
+        <form method="get" action="ITarjetasVerificacion.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">Folio de Verificación</label>
+                <input type="number" name="FolioVerificacion" id="FolioVerificacion" required
+                    placeholder="Ingrese el folio de verificación">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Vehículo</label>
+                <input type="number" name="IdVehiculo" id="IdVehiculo" required
+                    placeholder="Ingrese el ID del vehículo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Entidad</label>
+                <input type="text" name="Entidad" id="Entidad" required placeholder="Ingrese la entidad federativa">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Municipio</label>
+                <input type="text" name="Municipio" id="Municipio" required placeholder="Ingrese el municipio">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Centro Verificación</label>
+                <input type="number" name="IdCenVerificacion" id="IdCenVerificacion" required
+                    placeholder="Ingrese el ID del centro">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Línea</label>
+                <input type="number" name="NoLineaVerificacion" id="NoLineaVerificacion" required
+                    placeholder="Ingrese el número de línea">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Técnico Verificador</label>
+                <input type="number" name="TecnicoVerificador" id="TecnicoVerificador" required
+                    placeholder="Número del técnico verificador">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Expedición</label>
+                <input type="date" name="FechaExpedicion" id="FechaExpedicion" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Hora de Entrada</label>
+                <input type="time" name="HoraEntrada" id="HoraEntrada" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Hora de Salida</label>
+                <input type="time" name="HoraSalida" id="HoraSalida" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Motivo de Verificación</label>
+                <input type="text" name="MotivoVerificacion" id="MotivoVerificacion" required
+                    placeholder="Especifique el motivo de verificación">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Semestre</label>
+                <input type="number" name="Semestre" id="Semestre" required
+                    placeholder="Ingrese el semestre correspondiente">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Vigencia</label>
+                <input type="date" name="Vigencia" id="Vigencia" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Código de Barras</label>
+                <input type="text" name="CodigoBarra" id="CodigoBarra" required
+                    placeholder="Ingrese el código de barras">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Código QR</label>
+                <input type="text" name="CodigoQR" id="CodigoQR" required placeholder="Ingrese el código QR">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-check-circle"></i>
+                Registrar Tarjeta
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -4,50 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagos</title>
+    <title>Registro de Pagos</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Pagos</strong></label>
-    <form method="post" action="IPagos.php">
-        <label>IdPago</label>
-        <br>
-        <input type="number" name="IdPago" id="IdPago" required="required">
-        <br>
-        <label>Nombre</label>
-        <br>
-        <input type="text" name="Nombre" id="Nombre" required="required">
-        <br>
-        <label>Apellido</label>
-        <br>
-        <input type="text" name="Apellido" id="Apellido" required="required">
-        <br>
-        <label>FechaNacimiento</label>
-        <br>
-        <input type="date" name="FechaNacimiento" id="FechaNacimiento" required="required">
-        <br>
-        <label>FechaExpedicion</label>
-        <br>
-        <input type="date" name="FechaExpedicion" id="FechaExpedicion" required="required">
-        <br>
-        <label>FechaValidacion</label>
-        <br>
-        <input type="date" name="FechaValidacion" id="FechaValidacion" required="required">
-        <br>
-        <label>Monto</label>
-        <br>
-        <input type="number" name="Monto" id="Monto" required="required">
-        <br>
-        <label>Firma</label>
-        <br>
-        <input type="text" name="Firma" id="Firma" required="required">
-        <br>
-        <label>FolioTarjetaCirculacion</label>
-        <br>
-        <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-credit-card icono"></i>
+            Registro de Pagos
+        </h1>
+
+        <form method="post" action="IPagos.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">ID Pago</label>
+                <input type="number" name="IdPago" id="IdPago" required
+                    placeholder="Ingrese el ID del pago">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Nombre</label>
+                <input type="text" name="Nombre" id="Nombre" required
+                    placeholder="Ingrese el nombre">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Apellido</label>
+                <input type="text" name="Apellido" id="Apellido" required
+                    placeholder="Ingrese el apellido">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Nacimiento</label>
+                <input type="date" name="FechaNacimiento" id="FechaNacimiento" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Expedición</label>
+                <input type="date" name="FechaExpedicion" id="FechaExpedicion" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Validación</label>
+                <input type="date" name="FechaValidacion" id="FechaValidacion" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Monto</label>
+                <input type="number" name="Monto" id="Monto" required
+                    placeholder="Ingrese el monto">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Firma</label>
+                <input type="text" name="Firma" id="Firma" required
+                    placeholder="Ingrese la firma">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Folio Tarjeta Circulación</label>
+                <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required
+                    placeholder="Ingrese el folio">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-check-circle"></i>
+                Registrar Pago
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

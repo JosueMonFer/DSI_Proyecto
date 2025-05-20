@@ -4,82 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vehiculos</title>
+    <title>Vehículos</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Vehiculos</strong></label>
-    <form method="get" action="IVehiculos.php">
-        <label>IdVehiculo</label>
-        <br>
-        <input type="number" name="IdVehiculo" id="IdVehiculo"  required="required">
-        <br>
-        <label>Cilindro</label>
-        <br>
-        <input type="number" name="Cilindro" id="Cilindro" required="required">
-        <br>
-        <label>Combustible</label>
-        <br>
-        <input type="text" name="Combustible" id="Combustible" required="required">
-        <br>
-        <label>Llanta</label>
-        <br>
-        <input type="number" name="Llanta" id="Llanta" required="required">
-        <br>
-        <label>Asiento</label>
-        <br>
-        <input type="number" name="Asiento" id="Asiento" required="required">
-        <br>
-        <label>Holograma</label>
-        <br>
-        <input type="text" name="Holograma" id="Holograma">
-        <br>
-        <label>Color</label>
-        <br>
-        <input type="text" name="Color" id="Color">
-        <br>
-        <label>Puerta</label>
-        <br>
-        <input type="number" name="Puerta" id="Puerta">
-        <br>
-        <label>Modelo</label>
-        <br>
-        <input type="text" name="Modelo" id="Modelo" required="required">
-        <br>
-        <label>Submarca</label>
-        <br>
-        <input type="text" name="Submarca" id="Submarca">
-        <br>
-        <label>Placa</label>
-        <br>
-        <input type="text" name="Placa" id="Placa" required="required">
-        <br>
-        <label>NumeroSerie</label>
-        <br>
-        <input type="number" name="NumeroSerie" id="NumeroSerie" required="required">
-        <br>
-        <label>Clase</label>
-        <br>
-        <input type="text" name="Clase" id="Clase">
-        <br>
-        <label>Carroceria</label>
-        <br>
-        <input type="text" name="Carroceria" id="Carroceria">
-        <br>
-        <label>TipoServicio</label>
-        <br>
-        <input type="text" name="TipoServicio" id="TipoServicio">
-        <br>
-        <label>NumeroMotor</label>
-        <br>
-        <input type="number" name="NumeroMotor" id="NumeroMotor">
-        <br>
-        <label>Transmision</label>
-        <br>
-        <input type="number" name="Transmision" id="Transmision" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-car icono"></i>
+            Registro de Vehículos
+        </h1>
+
+        <form method="get" action="IVehiculos.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">ID Vehículo</label>
+                <input type="number" name="IdVehiculo" id="IdVehiculo" required
+                    placeholder="Ingrese el ID del vehículo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Cilindros</label>
+                <input type="number" name="Cilindro" id="Cilindro" required placeholder="Número de cilindros">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Tipo de Combustible</label>
+                <input type="text" name="Combustible" id="Combustible" required placeholder="Ej: Gasolina, Diésel">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Llantas</label>
+                <input type="number" name="Llanta" id="Llanta" required placeholder="Cantidad de llantas">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Asientos</label>
+                <input type="number" name="Asiento" id="Asiento" required placeholder="Capacidad de pasajeros">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Holograma</label>
+                <input type="text" name="Holograma" id="Holograma" placeholder="Código del holograma">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Color</label>
+                <input type="text" name="Color" id="Color" placeholder="Color principal del vehículo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Puertas</label>
+                <input type="number" name="Puerta" id="Puerta" placeholder="Cantidad de puertas">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Modelo</label>
+                <input type="text" name="Modelo" id="Modelo" required placeholder="Año del modelo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Submarca</label>
+                <input type="text" name="Submarca" id="Submarca" placeholder="Submarca del vehículo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Placa</label>
+                <input type="text" name="Placa" id="Placa" required placeholder="Placa de circulación">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Serie</label>
+                <input type="number" name="NumeroSerie" id="NumeroSerie" required
+                    placeholder="Serie único del vehículo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Clase</label>
+                <input type="text" name="Clase" id="Clase" placeholder="Clasificación vehicular">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Carrocería</label>
+                <input type="text" name="Carroceria" id="Carroceria" placeholder="Tipo de carrocería">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Tipo de Servicio</label>
+                <input type="text" name="TipoServicio" id="TipoServicio" placeholder="Ej: Particular, Público">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Motor</label>
+                <input type="number" name="NumeroMotor" id="NumeroMotor" placeholder="Número de motor">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Transmisión</label>
+                <input type="number" name="Transmision" id="Transmision" required placeholder="Tipo de transmisión">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-check-circle"></i>
+                Registrar Vehículo
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

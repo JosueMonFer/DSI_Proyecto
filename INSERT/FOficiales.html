@@ -3,31 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta method="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficiales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Oficiales</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Oficiales</strong></label>
-    <form method="get" action="IOficiales.php">
-        <label>IdOficial</label>
-        <br>
-        <input type="boolean" name="IdOficial" id="IdOficial" required="required">
-        <br>
-        <label>Cargo</label>
-        <br>
-        <input type="text" name="Cargo" id="Cargo" required="required">
-        <br>
-        <label>Nombre</label>
-        <br>
-        <input type="text" name="Nombre" id="Nombre" required="required">
-        <br>
-        <label>Apellido</label>
-        <br>
-        <input type="text" name="Apellido" id="Apellido" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-user-shield icono"></i>
+            Registro de Oficiales
+        </h1>
+
+        <form method="get" action="IOficiales.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">ID Oficial</label>
+                <input type="number" name="IdOficial" id="IdOficial" required placeholder="Ej: 12345">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Cargo</label>
+                <input type="text" name="Cargo" id="Cargo" required placeholder="Ej: Agente de tránsito">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Nombre</label>
+                <input type="text" name="Nombre" id="Nombre" required placeholder="Nombre completo">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Apellido</label>
+                <input type="text" name="Apellido" id="Apellido" required placeholder="Apellido completo">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-id-badge"></i>
+                Registrar Oficial
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

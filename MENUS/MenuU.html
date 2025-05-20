@@ -4,80 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Desplegable</title>
-    <style type="text/css">
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
+    <title>Panel de Control - Administración Vehicular</title>
+    <link rel="stylesheet" href="../styles/SMenus.css">
 
-        #header {
-            margin: auto;
-            width: 500px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        ul,
-        ol {
-            list-style: none;
-        }
-
-        .nav>li {
-            float: left;
-        }
-
-        .nav li a {
-            background-color: #000;
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 12px;
-            display: block;
-        }
-
-        .nav li a:hover {
-            background-color: #434343;
-        }
-
-        .nav li ul {
-            display: none;
-            position: absolute;
-            min-width: 140px;
-        }
-
-        .nav li:hover>ul {
-            display: block;
-        }
-
-        .nav li ul li {
-            position: relative;
-        }
-
-        .nav li ul li ul {
-            right: -140px;
-            top: 0px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div id="header">
-        <ul class="nav">
-            <li><a>SELECT</a>
-                <ul>
-                    <li><a href="../SELECT/FSCentrosVerificacion.html">Centros de Verificación</a></li>
-                    <li><a href="../SELECT/FSConductores.html">Conductores</a></li>
-                    <li><a href="../SELECT/FSDomicilios.html">Domicilios</a></li>
-                    <li><a href="../SELECT/FSLicencias.html">Licencias</a></li>
-                    <li><a href="../SELECT/FSMultas.html">Multas</a></li>
-                    <li><a href="../SELECT/FSOficiales.html">Oficiales</a></li>
-                    <li><a href="../SELECT/FSPagos.html">Pagos</a></li>
-                    <li><a href="../SELECT/FSPropietarios.html">Propietarios</a></li>
-                    <li><a href="../SELECT/FSTarjetasCirculacion.html">Tarjetas de Circulación</a></li>
-                    <li><a href="../SELECT/FSTarjetasVerificacion.html">Tarjetas de Verificación</a></li>
-                    <li><a href="../SELECT/FSVehiculos.html">Vehículos</a></li>
-                </ul>
-            </li>
-        </ul>
+    <div class="encabezado">
+        <h1 class="titulo">BIENVENIDO A NUESTRO CONTROL VEHICULAR</h1>
+    </div>
+    <div class="contenedor">
+        <nav class="menu">
+            <ul class="lista">
+                <li class="seccion">
+                    <a class="enlaceSeccion">
+                        <i class="fas fa-search iconoMenu"></i>
+                        Consultas
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="../SELECT/FSCentrosVerificacion.html"><i
+                                    class="fas fa-building iconoSubmenu"></i>Centros de Verificación</a></li>
+                        <li><a href="../SELECT/FSConductores.html"><i
+                                    class="fas fa-users iconoSubmenu"></i>Conductores</a></li>
+                        <li><a href="../SELECT/FSDomicilios.html"><i
+                                    class="fas fa-map-marker-alt iconoSubmenu"></i>Domicilios</a></li>
+                        <li><a href="../SELECT/FSLicencias.html"><i
+                                    class="fas fa-id-card iconoSubmenu"></i>Licencias</a></li>
+                        <li><a href="../SELECT/FSMultas.html"><i
+                                    class="fas fa-exclamation-triangle iconoSubmenu"></i>Multas</a></li>
+                        <li><a href="../SELECT/FSOficiales.html"><i
+                                    class="fas fa-user-shield iconoSubmenu"></i>Oficiales</a></li>
+                        <li><a href="../SELECT/FSPagos.html"><i class="fas fa-credit-card iconoSubmenu"></i>Pagos</a>
+                        </li>
+                        <li><a href="../SELECT/FSPropietarios.html"><i
+                                    class="fas fa-user-tie iconoSubmenu"></i>Propietarios</a></li>
+                        <li><a href="../SELECT/FSTarjetasCirculacion.html"><i
+                                    class="fas fa-car-side iconoSubmenu"></i>Tarjetas Circulación</a></li>
+                        <li><a href="../SELECT/FSTarjetasVerificacion.html"><i
+                                    class="fas fa-check-circle iconoSubmenu"></i>Tarjetas Verificación</a></li>
+                        <li><a href="../SELECT/FSVehiculos.html"><i
+                                    class="fas fa-truck-pickup iconoSubmenu"></i>Vehículos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 </body>
 

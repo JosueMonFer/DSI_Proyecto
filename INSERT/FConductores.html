@@ -1,45 +1,69 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Registro de Conductores</title>  
+    <link rel="stylesheet" href="../styles/SInsert.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+</head>  
+<body>  
+    <div class="contenedor">  
+        <h1 class="titulo">  
+            <i class="fas fa-id-card icono"></i>  
+            Registro de Conductores  
+        </h1>  
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Condutores</title>
-</head>
+        <form method="post" action="IConductores.php" class="formulario">  
+            <div class="campo">  
+                <label class="etiqueta">ID Conductor</label>  
+                <input type="number" name="IdConductor" id="IdConductor" required  
+                    placeholder="Ingrese ID único">  
+            </div>  
 
-<body>
-    <label><strong>Conductores</strong></label>
-    <form method="post" action="IConductores.php">
-        <label>IdConductor</label>
-        <br>
-        <input type="number" name="IdConductor" id="IdConductor" required="required">
-        <br>
-        <label>Curp</label>
-        <br>
-        <input type="text" name="Curp" id="Curp" required="required">
-        <br>
-        <label>Nombre</label>
-        <br>
-        <input type="text" name="Nombre" id="Nombre" required="required">
-        <br>
-        <label>Apellido</label>
-        <br>
-        <input type="text" name="Apellido" id="Apellido" required="required">
-        <br>
-        <label>IdDomicilio</label>
-        <br>
-        <input type="number" name="IdDomicilio" id="IdDomicilio" required="required">
-        <br>
-        <label>Folio</label>
-        <br>
-        <input type="number" name="Folio" id="Folio" required="required">
-        <br>
-        <label>NoEmergencia</label>
-        <br>
-        <input type="number" name="NoEmergencia" id="NoEmergencia" required="required">
-        <br>
-        <input type="submit">
-    </form>
-</body>
+            <div class="campo">  
+                <label class="etiqueta">CURP</label>  
+                <input type="text" name="Curp" id="Curp" required  
+                    placeholder="Ej: 1234567890ABCDEF">  
+            </div>  
 
-</html>
+            <div class="campo">  
+                <label class="etiqueta">Nombre</label>  
+                <input type="text" name="Nombre" id="Nombre" required  
+                    placeholder="Nombre completo">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">Apellido</label>  
+                <input type="text" name="Apellido" id="Apellido" required  
+                    placeholder="Apellido completo">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">ID Domicilio</label>  
+                <input type="number" name="IdDomicilio" id="IdDomicilio" required  
+                    placeholder="ID de domicilio">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">Folio</label>  
+                <input type="number" name="Folio" id="Folio" required  
+                    placeholder="Número de folio">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">Número de Emergencia</label>  
+                <input type="number" name="NoEmergencia" id="NoEmergencia" required  
+                    placeholder="10 dígitos">  
+            </div>  
+
+            <button type="submit" class="botonEnviar">  
+                <i class="fas fa-user-check"></i>  
+                Registrar Conductor  
+            </button>  
+        </form>  
+    </div>  
+</body>  
+</html>  

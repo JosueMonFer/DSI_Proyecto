@@ -1,45 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Registro de Domicilios</title>  
+    <link rel="stylesheet" href="../styles/SInsert.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+</head>  
+<body>  
+    <div class="contenedor">  
+        <h1 class="titulo">  
+            <i class="fas fa-map-marker-alt icono"></i>  
+            Registro de Domicilios  
+        </h1>  
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domicilios</title>
-</head>
+        <form method="get" action="IDomicilios.php" class="formulario">  
+            <div class="campo">  
+                <label class="etiqueta">ID Domicilio</label>  
+                <input type="number" name="IdDomicilio" id="IdDomicilio" required  
+                    placeholder="Identificador único">  
+            </div>  
 
-<body>
-    <label><strong>Domicilios</strong></label>
-    <form method="get" action="IDomicilios.php">
-        <label>IdDomicilio</label>
-        <br>
-        <input type="number" name="IdDomicilio" id="IdDomicilio" required="required">
-        <br>
-        <label>Calle</label>
-        <br>
-        <input type="text" name="Calle" id="Calle" required="required">
-        <br>
-        <label>Colonia</label>
-        <br>
-        <input type="text" name="Colonia" id="Colonia" required="required">
-        <br>
-        <label>NoExterior</label>
-        <br>
-        <input type="number" name="NoExterior" id="NoExterior" required="required">
-        <br>
-        <label>Cp</label>
-        <br>
-        <input type="number" name="Cp" id="Cp" required="required">
-        <br>
-        <label>Municipio</label>
-        <br>
-        <input type="text" name="Municipio" id="Municipio" required="required">
-        <br>
-        <label>Estado</label>
-        <br>
-        <input type="text" name="Estado" id="Estado" required="required">
-        <br>
-        <input type="submit">
-    </form>
-</body>
+            <div class="campo">  
+                <label class="etiqueta">Calle</label>  
+                <input type="text" name="Calle" id="Calle" required  
+                    placeholder="Ej: Av. Revolución">  
+            </div>  
 
-</html>
+            <div class="campo">  
+                <label class="etiqueta">Colonia</label>  
+                <input type="text" name="Colonia" id="Colonia" required  
+                    placeholder="Ej: Centro">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">Número Exterior</label>  
+                <input type="number" name="NoExterior" id="NoExterior" required  
+                    placeholder="Ej: 123">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">Código Postal</label>  
+                <input type="number" name="Cp" id="Cp" required  
+                    placeholder="5 dígitos">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">Municipio</label>  
+                <input type="text" name="Municipio" id="Municipio" required  
+                    placeholder="Ej: Guadalajara">  
+            </div>  
+
+            <div class="campo">  
+                <label class="etiqueta">Estado</label>  
+                <input type="text" name="Estado" id="Estado" required  
+                    placeholder="Ej: Jalisco">  
+            </div>  
+
+            <button type="submit" class="botonEnviar">  
+                <i class="fas fa-map-pin"></i>  
+                Registrar Domicilio  
+            </button>  
+        </form>  
+    </div>  
+</body>  
+</html>  

@@ -4,50 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multas</title>
+    <title>Registro de Multas</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Multas</strong></label>
-    <form method="get" action="IMultas.php">
-        <label>IdMulta</label>
-        <br>
-        <input type="number" name="IdMulta" id="IdMulta" required="required">
-        <br>
-        <label>Dia</label>
-        <br>
-        <input type="number" name="Dia" id="Dia" required="required">
-        <br>
-        <label>Mes</label>
-        <br>
-        <input type="number" name="Mes" id="Mes" required="required">
-        <br>
-        <label>Año</label>
-        <br>
-        <input type="number" name="Anio" id="Anio" required="required">
-        <br>
-        <label>Hora</label>
-        <br>
-        <input type="time" name="Hora" id="Hora" required="required">
-        <br>
-        <label>FolioTarjetaCirculacion</label>
-        <br>
-        <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required="required">
-        <br>
-        <label>IdOficial</label>
-        <br>
-        <input type=" number" name="IdOficial" id="IdOficial" required="required">
-        <br>
-        <label>FolioVerificacion</label>
-        <br>
-        <input type="number" name="FolioVerificacion" id="FolioVerificacion" required="required">
-        <br>
-        <label>NoLicencia</label>
-        <br>
-        <input type=" number" name="NoLicencia" id="NoLicencia" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-balance-scale icono"></i>
+            Registro de Multas
+        </h1>
+
+        <form method="get" action="IMultas.php" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">ID de Multa</label>
+                <input type="number" name="IdMulta" id="IdMulta" required placeholder="Identificador único">
+            </div>
+
+            <div class="grupoFecha">
+                <h3 class="subtitulo">Fecha de la Multa</h3>
+                <div class="grupoInputs">
+                    <div class="campo">
+                        <label class="etiqueta">Día</label>
+                        <input type="number" name="Dia" id="Dia" required placeholder="DD" min="1" max="31">
+                    </div>
+
+                    <div class="campo">
+                        <label class="etiqueta">Mes</label>
+                        <input type="number" name="Mes" id="Mes" required placeholder="MM" min="1" max="12">
+                    </div>
+
+                    <div class="campo">
+                        <label class="etiqueta">Año</label>
+                        <input type="number" name="Anio" id="Anio" required placeholder="AAAA" min="2000">
+                    </div>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Hora</label>
+                <input type="time" name="Hora" id="Hora" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Folio Tarjeta Circulación</label>
+                <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required
+                    placeholder="Número de folio">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Oficial</label>
+                <input type="number" name="IdOficial" id="IdOficial" required placeholder="Identificador del oficial">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Folio Verificación</label>
+                <input type="number" name="FolioVerificacion" id="FolioVerificacion" required
+                    placeholder="Folio de verificación">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Número de Licencia</label>
+                <input type="number" name="NoLicencia" id="NoLicencia" required placeholder="Licencia del infractor">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-file-invoice"></i>
+                Registrar Multa
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

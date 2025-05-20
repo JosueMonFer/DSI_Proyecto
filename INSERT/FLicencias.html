@@ -4,74 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Licencias</title>
+    <title>Registro de Licencias</title>
+    <link rel="stylesheet" href="../styles/SInsert.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <label><strong>Licencias</strong></label>
-    <form method="post" action="ILicencias.php" enctype="multipart/form-data">
-        <label>NoLicencia</label>
-        <br>
-        <input type="number" name="NoLicencia" id="NoLicencia" required="required">
-        <br>
-        <label>Nombre</label>
-        <br>
-        <input type="text" name="Nombre" id="Nombre" required="required">
-        <br>
-        <label>Foto</label>
-        <br>
-        <input type="file" name="Foto" id="Foto" accept="image/png, image/jpeg" required="required">
-        <br>
-        <label>Observacion</label>
-        <br>
-        <input type="text" name="Observacion" id="Observacion" required="required">
-        <br>
-        <label>FechaNac</label>
-        <br>
-        <input type="date" name="FechaNac" id="FechaNac" required="required">
-        <br>
-        <label>FechaExped</label>
-        <br>
-        <input type="date" name="FechaExped" id="FechaExped" required="required">
-        <br>
-        <label>FechaValid</label>
-        <br>
-        <input type="date" name="FechaValid" id="FechaValid" required="required">
-        <br>
-        <label>Antiguedad</label>
-        <br>
-        <input type="number" name="Antiguedad" id="Antiguedad">
-        <br>
-        <label>Firma</label>
-        <br>
-        <input type="file" name="Firma" id="Firma" accept="image/png, image/jpeg" required="required">
-        <br>
-        <label>IdDomicilio</label>
-        <br>
-        <input type="number" name="IdDomicilio" id="IdDomicilio" required="required">
-        <br>
-        <label>Restriccion</label>
-        <br>
-        <input type="text" name="Restriccion" id="Restriccion">
-        <br>
-        <label>GrupoSanguineo</label>
-        <br>
-        <input type="text" name="GrupoSanguineo" id="GrupoSanguineo">
-        <br>
-        <label>DonadorOrgano</label>
-        <br>
-        <input type="text" name="DonadorOrgano" id="DonadorOrgano">
-        <br>
-        <label>NoEmergencia</label>
-        <br>
-        <input type="number" name="NoEmergencia" id="NoEmergencia" required="required">
-        <br>
-        <label>IdConductor</label>
-        <br>
-        <input type="number" name="IdConductor" id="IdConductor" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <i class="fas fa-id-card icono"></i>
+            Registro de Licencias
+        </h1>
+
+        <form method="post" action="ILicencias.php" enctype="multipart/form-data" class="formulario">
+            <div class="campo">
+                <label class="etiqueta">Número de Licencia</label>
+                <input type="number" name="NoLicencia" id="NoLicencia" required placeholder="Ej: 123456">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Nombre del Titular</label>
+                <input type="text" name="Nombre" id="Nombre" required placeholder="Nombre completo">
+            </div>
+
+            <div class="campoArchivo">
+                <label class="etiqueta">Fotografía</label>
+                <input type="file" name="Foto" id="Foto" accept="image/png, image/jpeg" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Observaciones</label>
+                <input type="text" name="Observacion" id="Observacion" required placeholder="Detalles relevantes">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Nacimiento</label>
+                <input type="date" name="FechaNac" id="FechaNac" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Expedición</label>
+                <input type="date" name="FechaExped" id="FechaExped" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Fecha de Vencimiento</label>
+                <input type="date" name="FechaValid" id="FechaValid" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Antigüedad (años)</label>
+                <input type="number" name="Antiguedad" id="Antiguedad" placeholder="Años de experiencia">
+            </div>
+
+            <div class="campoArchivo">
+                <label class="etiqueta">Firma Digital</label>
+                <input type="file" name="Firma" id="Firma" accept="image/png, image/jpeg" required>
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Domicilio</label>
+                <input type="number" name="IdDomicilio" id="IdDomicilio" required placeholder="ID de ubicación">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Restricciones</label>
+                <input type="text" name="Restriccion" id="Restriccion" placeholder="Ej: Uso de lentes">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Grupo Sanguíneo</label>
+                <input type="text" name="GrupoSanguineo" id="GrupoSanguineo" placeholder="Ej: O+">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Donador de Órganos</label>
+                <input type="text" name="DonadorOrgano" id="DonadorOrgano" placeholder="Sí/No">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">Teléfono de Emergencia</label>
+                <input type="number" name="NoEmergencia" id="NoEmergencia" required placeholder="10 dígitos">
+            </div>
+
+            <div class="campo">
+                <label class="etiqueta">ID Conductor</label>
+                <input type="number" name="IdConductor" id="IdConductor" required placeholder="Identificador único">
+            </div>
+
+            <button type="submit" class="botonEnviar">
+                <i class="fas fa-file-contract"></i>
+                Generar Licencia
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>
