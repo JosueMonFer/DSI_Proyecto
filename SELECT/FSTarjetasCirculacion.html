@@ -4,40 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Tarjetas de Circualcion</title>
+    <title>Buscar Tarjetas de Circulación</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="STarjetasCirculacion.php">
-        <label>Tarjetas Circualcion</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="FolioTarjetaCirculacion">FolioTarjetaCirculacion
-        <br>
-        <input type="radio" name="Atributo" value="Holograma">Holograma
-        <br>
-        <input type="radio" name="Atributo" value="Vigencia">Vigencia
-        <br>
-        <input type="radio" name="Atributo" value="Rfc">Rfc
-        <br>
-        <input type="radio" name="Atributo" value="Localidad">Localidad
-        <br>
-        <input type="radio" name="Atributo" value="Municipio">Municipio
-        <br>
-        <input type="radio" name="Atributo" value="FechaExpedicion">FechaExpedicion
-        <br>
-        <input type="radio" name="Atributo" value="CveVehicular">CveVehicular
-        <br>
-        <input type="radio" name="Atributo" value="IdVehiculo">IdVehiculo
-        <br>
-        <input type="radio" name="Atributo" value="IdPropietario">IdPropietario
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-car-side icono"></i>
+                Buscar Tarjetas de Circulación
+            </h1>
+
+            <form action="STarjetasCirculacion.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FolioTarjetaCirculacion">
+                            <span class="marcadorRadio"></span>
+                            Folio Tarjeta Circulación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Holograma">
+                            <span class="marcadorRadio"></span>
+                            Holograma
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Vigencia">
+                            <span class="marcadorRadio"></span>
+                            Vigencia
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Rfc">
+                            <span class="marcadorRadio"></span>
+                            RFC
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Localidad">
+                            <span class="marcadorRadio"></span>
+                            Localidad
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Municipio">
+                            <span class="marcadorRadio"></span>
+                            Municipio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaExpedicion">
+                            <span class="marcadorRadio"></span>
+                            Fecha de Expedición
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="CveVehicular">
+                            <span class="marcadorRadio"></span>
+                            Clave Vehicular
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdVehiculo">
+                            <span class="marcadorRadio"></span>
+                            ID Vehículo
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdPropietario">
+                            <span class="marcadorRadio"></span>
+                            ID Propietario
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Tarjetas
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

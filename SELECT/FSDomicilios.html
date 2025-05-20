@@ -4,34 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Domicilios</title>
+    <title>Buscar Domicilios</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="SDomicilios.php">
-        <label>Domicilios</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="IdDomicilio">IdDomicilio
-        <br>
-        <input type="radio" name="Atributo" value="Calle">Calle
-        <br>
-        <input type="radio" name="Atributo" value="Colonia">Colonia
-        <br>
-        <input type="radio" name="Atributo" value="NoExterior">NoExterior
-        <br>
-        <input type="radio" name="Atributo" value="Cp">Cp
-        <br>
-        <input type="radio" name="Atributo" value="Municipio">Municipio
-        <br>
-        <input type="radio" name="Atributo" value="Estado">Estado
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-house icono"></i>
+                Buscar Domicilios
+            </h1>
+
+            <form action="SDomicilios.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdDomicilio">
+                            <span class="marcadorRadio"></span>
+                            ID Domicilio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Calle">
+                            <span class="marcadorRadio"></span>
+                            Calle
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Colonia">
+                            <span class="marcadorRadio"></span>
+                            Colonia
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NoExterior">
+                            <span class="marcadorRadio"></span>
+                            Número Exterior
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Cp">
+                            <span class="marcadorRadio"></span>
+                            Código Postal
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Municipio">
+                            <span class="marcadorRadio"></span>
+                            Municipio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Estado">
+                            <span class="marcadorRadio"></span>
+                            Estado
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Domicilios
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

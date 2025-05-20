@@ -13,7 +13,6 @@
 
     // Procesamiento
     $N = mysqli_num_rows($ResultSet);
-    $Columnas = mysqli_field_count($Conexion);
 
     echo "<!DOCTYPE html>
     <html lang='es'>
@@ -21,37 +20,30 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Resultados de Búsqueda</title>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }   
-        </style>
+        <link rel='stylesheet' href='../styles/SResultadoInsert.css'>
+        
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
     </head>
     <body>
-        <h2>Resultados de Búsqueda de Multas</h2>
-        <table>
-            <tr>
-                <th>IdMulta</th>
-                <th>Dia</th>
-                <th>Mes</th>
-                <th>Anio</th>
-                <th>Hora</th>
-                <th>FolioTarjetaCirculacion</th>
-                <th>IdOficial</th>
-                <th>FolioVerificacion</th>
-                <th>NoLicencia</th>
-            </tr>";
+        <div class='contenedor'>
+            <h2><i class='fas fa-traffic-light'></i> Resultados de Multas</h2>
+            <div class='tabla'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Multa</th>
+                            <th>Día</th>
+                            <th>Mes</th>
+                            <th>Año</th>
+                            <th>Hora</th>
+                            <th>Folio Tarjeta</th>
+                            <th>ID Oficial</th>
+                            <th>Folio Verificación</th>
+                            <th>N° Licencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
 
     while ($Fila = $ResultSet->fetch_assoc()) {
         echo "<tr>
@@ -67,8 +59,11 @@
               </tr>";
     }
 
-    echo "</table>";
-    echo "<p>Registros Encontrados: " . $N . "</p>";
+    echo "</tbody>
+                </table>
+            </div>
+            <p class='registros'>Registros encontrados: " . $N . "</p>
+        </div>";
 
     Desconectar($Conexion);
 

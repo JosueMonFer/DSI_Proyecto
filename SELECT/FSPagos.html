@@ -4,38 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Pagos</title>
+    <title>Buscar Pagos</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="SPagos.php">
-        <label>Pagos</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="IdPago">IdPago
-        <br>
-        <input type="radio" name="Atributo" value="Nombre">Nombre
-        <br>
-        <input type="radio" name="Atributo" value="Apellido">Apellido
-        <br>
-        <input type="radio" name="Atributo" value="FechaNacimiento">FechaNacimiento
-        <br>
-        <input type="radio" name="Atributo" value="FechaExpedicion">FechaExpedicion
-        <br>
-        <input type="radio" name="Atributo" value="FechaValidacion">FechaValidacion
-        <br>
-        <input type="radio" name="Atributo" value="Monto">Monto
-        <br>
-        <input type="radio" name="Atributo" value="Firma">Firma
-        <br>
-        <input type="radio" name="Atributo" value="FolioTarjetaCirculacion">FolioTarjetaCirculacion
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-credit-card icono"></i>
+                Buscar Pagos
+            </h1>
+
+            <form action="SPagos.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdPago">
+                            <span class="marcadorRadio"></span>
+                            ID Pago
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Nombre">
+                            <span class="marcadorRadio"></span>
+                            Nombre
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Apellido">
+                            <span class="marcadorRadio"></span>
+                            Apellido
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaNacimiento">
+                            <span class="marcadorRadio"></span>
+                            Fecha de Nacimiento
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaExpedicion">
+                            <span class="marcadorRadio"></span>
+                            Fecha de Expedición
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaValidacion">
+                            <span class="marcadorRadio"></span>
+                            Fecha de Validación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Monto">
+                            <span class="marcadorRadio"></span>
+                            Monto
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Firma">
+                            <span class="marcadorRadio"></span>
+                            Firma
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FolioTarjetaCirculacion">
+                            <span class="marcadorRadio"></span>
+                            Folio Tarjeta Circulación
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Pagos
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

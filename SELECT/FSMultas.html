@@ -4,38 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Multas</title>
+    <title>Buscar Multas</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="SMultas.php">
-        <label>Multas</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="IdMulta">IdMulta
-        <br>
-        <input type="radio" name="Atributo" value="Dia">Dia
-        <br>
-        <input type="radio" name="Atributo" value="Mes">Mes
-        <br>
-        <input type="radio" name="Atributo" value="Anio">Anio
-        <br>
-        <input type="radio" name="Atributo" value="Hora">Hora
-        <br>
-        <input type="radio" name="Atributo" value="FolioTarjetaCirculacion">FolioTarjetaCirculacion
-        <br>
-        <input type="radio" name="Atributo" value="IdOficial">IdOficial
-        <br>
-        <input type="radio" name="Atributo" value="FolioVerificacion">FolioVerificacion
-        <br>
-        <input type="radio" name="Atributo" value="NoLicencia">NoLicencia
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-traffic-light icono"></i>
+                Buscar Multas
+            </h1>
+
+            <form action="SMultas.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdMulta">
+                            <span class="marcadorRadio"></span>
+                            ID Multa
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Dia">
+                            <span class="marcadorRadio"></span>
+                            Día
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Mes">
+                            <span class="marcadorRadio"></span>
+                            Mes
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Anio">
+                            <span class="marcadorRadio"></span>
+                            Año
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Hora">
+                            <span class="marcadorRadio"></span>
+                            Hora
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FolioTarjetaCirculacion">
+                            <span class="marcadorRadio"></span>
+                            Folio Tarjeta Circulación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdOficial">
+                            <span class="marcadorRadio"></span>
+                            ID Oficial
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FolioVerificacion">
+                            <span class="marcadorRadio"></span>
+                            Folio Verificación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NoLicencia">
+                            <span class="marcadorRadio"></span>
+                            Número de Licencia
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Multas
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

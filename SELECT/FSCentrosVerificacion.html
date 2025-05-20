@@ -1,28 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Centros Verificación</title>
+    <title>Buscar Centros de Verificación</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <form action="SCentrosVerificacion.php">
-        <label>Centros Verificacion</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="IdCenVerificacion">IdCenVerificacion
-        <br>
-        <input type="radio" name="Atributo" value="NoLinea">NoLinea
-        <br>
-        <input type="radio" name="Atributo" value="Verificacion">Verificacion
-        <br>
-        <input type="radio" name="Atributo" value="IdDomicilio">IdDomicilio
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-search icono"></i>
+                Buscar Centros
+            </h1>
+
+            <form action="SCentrosVerificacion.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdCenVerificacion">
+                            <span class="marcadorRadio"></span>
+                            ID Centro
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NoLinea">
+                            <span class="marcadorRadio"></span>
+                            Número de Línea
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Verificacion">
+                            <span class="marcadorRadio"></span>
+                            Tipo de Verificación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdDomicilio">
+                            <span class="marcadorRadio"></span>
+                            ID Domicilio
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Centros
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>

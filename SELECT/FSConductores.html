@@ -4,34 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Conductores</title>
+    <title>Buscar Conductores</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="SConductores.php">
-        <label>Conductores</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="IdConductor">IdConductor
-        <br>
-        <input type="radio" name="Atributo" value="Curp">Curp
-        <br>
-        <input type="radio" name="Atributo" value="Nombre">Nombre
-        <br>
-        <input type="radio" name="Atributo" value="Apellido">Apellido
-        <br>
-        <input type="radio" name="Atributo" value="IdDomicilio">IdDomicilio
-        <br>
-        <input type="radio" name="Atributo" value="Folio">Folio
-        <br>
-        <input type="radio" name="Atributo" value="NoEmergencia">NoEmergencia
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-user icono"></i>
+                Buscar Conductores
+            </h1>
+
+            <form action="SConductores.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdConductor">
+                            <span class="marcadorRadio"></span>
+                            ID Conductor
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Curp">
+                            <span class="marcadorRadio"></span>
+                            CURP
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Nombre">
+                            <span class="marcadorRadio"></span>
+                            Nombre
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Apellido">
+                            <span class="marcadorRadio"></span>
+                            Apellido
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdDomicilio">
+                            <span class="marcadorRadio"></span>
+                            ID Domicilio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Folio">
+                            <span class="marcadorRadio"></span>
+                            Folio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NoEmergencia">
+                            <span class="marcadorRadio"></span>
+                            Número de Emergencia
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Conductores
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -13,7 +13,6 @@
 
     // Procesamiento
     $N = mysqli_num_rows($ResultSet);
-    $Columnas = mysqli_field_count($Conexion);
 
     echo "<!DOCTYPE html>
     <html lang='es'>
@@ -21,45 +20,37 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Resultados de Búsqueda</title>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }   
-        </style>
+        <link rel='stylesheet' href='../styles/SResultadoInsert.css'>
+
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
     </head>
     <body>
-        <h2>Resultados de Búsqueda de Verificaciones</h2>
-        <table>
-            <tr>
-                <th>FolioVerificacion</th>
-                <th>IdVehiculo</th>
-                <th>Entidad</th>
-                <th>Municipio</th>
-                <th>IdCenVerificacion</th>
-                <th>NoLineaVerificacion</th>
-                <th>TecnicoVerificador</th>
-                <th>FechaExpedicion</th>
-                <th>HoraEntrada</th>
-                <th>HoraSalida</th>
-                <th>MotivoVerificacion</th>
-                <th>Semestre</th>
-                <th>Vigencia</th>
-                <th>CodigoBarra</th>
-                <th>CodigoQR</th>
-            </tr>";
+        <div class='contenedor'>
+            <h2><i class='fas fa-clipboard-check'></i> Verificaciones Vehiculares</h2>
+            <div class='tabla'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Folio</th>
+                            <th>ID Vehículo</th>
+                            <th>Entidad</th>
+                            <th>Municipio</th>
+                            <th>ID Centro</th>
+                            <th>Línea Verificación</th>
+                            <th>Técnico</th>
+                            <th>Fecha Expedición</th>
+                            <th>Hora Entrada</th>
+                            <th>Hora Salida</th>
+                            <th>Motivo</th>
+                            <th>Semestre</th>
+                            <th>Vigencia</th>
+                            <th>Código Barras</th>
+                            <th>Código QR</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
 
-    // Mostrar los resultados de la consulta
     while ($Fila = $ResultSet->fetch_assoc()) {
         echo "<tr>
                 <td>" . htmlspecialchars($Fila['FolioVerificacion']) . "</td>
@@ -80,8 +71,11 @@
               </tr>";
     }
 
-    echo "</table>";
-    echo "<p>Registros Encontrados: " . $N . "</p>";
+    echo "</tbody>
+                </table>
+            </div>
+            <p class='registros'>Registros encontrados: " . $N . "</p>
+        </div>";
 
     Desconectar($Conexion);
 

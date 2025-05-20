@@ -4,54 +4,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Vehiculos</title>
+    <title>Buscar Vehículos</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="SVehiculos.php">
-        <label>Vehiculos</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="IdVehiculo">IdVehiculo
-        <br>
-        <input type="radio" name="Atributo" value="Cilindro">Cilindro
-        <br>
-        <input type="radio" name="Atributo" value="Combustible">Combustible
-        <br>
-        <input type="radio" name="Atributo" value="Llanta">Llanta
-        <br>
-        <input type="radio" name="Atributo" value="Asiento">Asiento
-        <br>
-        <input type="radio" name="Atributo" value="Holograma">Holograma
-        <br>
-        <input type="radio" name="Atributo" value="Color">Color
-        <br>
-        <input type="radio" name="Atributo" value="Puerta">Puerta
-        <br>
-        <input type="radio" name="Atributo" value="Modelo">Modelo
-        <br>
-        <input type="radio" name="Atributo" value="Submarca">Submarca
-        <br>
-        <input type="radio" name="Atributo" value="Placa">Placa
-        <br>
-        <input type="radio" name="Atributo" value="NumeroSerie">NumeroSerie
-        <br>
-        <input type="radio" name="Atributo" value="Clase">Clase
-        <br>
-        <input type="radio" name="Atributo" value="Carroceria">Carroceria
-        <br>
-        <input type="radio" name="Atributo" value="TipoServicio">TipoServicio
-        <br>
-        <input type="radio" name="Atributo" value="NumeroMotor">NumeroMotor
-        <br>
-        <input type="radio" name="Atributo" value="Transmision">Transmision
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-car-alt icono"></i>
+                Buscar Vehículos
+            </h1>
+
+            <form action="SVehiculos.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdVehiculo">
+                            <span class="marcadorRadio"></span>
+                            ID Vehículo
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Cilindro">
+                            <span class="marcadorRadio"></span>
+                            Cilindro
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Combustible">
+                            <span class="marcadorRadio"></span>
+                            Combustible
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Llanta">
+                            <span class="marcadorRadio"></span>
+                            Llanta
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Asiento">
+                            <span class="marcadorRadio"></span>
+                            Asiento
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Holograma">
+                            <span class="marcadorRadio"></span>
+                            Holograma
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Color">
+                            <span class="marcadorRadio"></span>
+                            Color
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Puerta">
+                            <span class="marcadorRadio"></span>
+                            Puerta
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Modelo">
+                            <span class="marcadorRadio"></span>
+                            Modelo
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Submarca">
+                            <span class="marcadorRadio"></span>
+                            Submarca
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Placa">
+                            <span class="marcadorRadio"></span>
+                            Placa
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NumeroSerie">
+                            <span class="marcadorRadio"></span>
+                            Número de Serie
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Clase">
+                            <span class="marcadorRadio"></span>
+                            Clase
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Carroceria">
+                            <span class="marcadorRadio"></span>
+                            Carrocería
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="TipoServicio">
+                            <span class="marcadorRadio"></span>
+                            Tipo de Servicio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NumeroMotor">
+                            <span class="marcadorRadio"></span>
+                            Número de Motor
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Transmision">
+                            <span class="marcadorRadio"></span>
+                            Transmisión
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Vehículos
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

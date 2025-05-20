@@ -4,50 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Tarjetas de Verificacion</title>
+    <title>Buscar Tarjetas de Verificación</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="STarjetasVerificacion.php">
-        <label>Tarjetas de Verificacion</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="FolioVerificacion">FolioVerificacion
-        <br>
-        <input type="radio" name="Atributo" value="IdVehiculo">IdVehiculo
-        <br>
-        <input type="radio" name="Atributo" value="Entidad">Entidad
-        <br>
-        <input type="radio" name="Atributo" value="Municipio">Municipio
-        <br>
-        <input type="radio" name="Atributo" value="IdCenVerificacion">IdCenVerificacion
-        <br>
-        <input type="radio" name="Atributo" value="NoLineaVerificacion">NoLineaVerificacion
-        <br>
-        <input type="radio" name="Atributo" value="TecnicoVerificador">TecnicoVerificador
-        <br>
-        <input type="radio" name="Atributo" value="FechaExpedicion">FechaExpedicion
-        <br>
-        <input type="radio" name="Atributo" value="HoraEntrada">HoraEntrada
-        <br>
-        <input type="radio" name="Atributo" value="HoraSalida">HoraSalida
-        <br>
-        <input type="radio" name="Atributo" value="MotivoVerificacion">MotivoVerificacion
-        <br>
-        <input type="radio" name="Atributo" value="Semestre">Semestre
-        <br>
-        <input type="radio" name="Atributo" value="Vigencia">Vigencia
-        <br>
-        <input type="radio" name="CodigoBarra" value="CodigoBarra">CodigoBarra
-        <br>
-        <input type="radio" name="CodigoQR" value="CodigoQR">CodigoQR
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-clipboard-check icono"></i>
+                Buscar Tarjetas de Verificación
+            </h1>
+
+            <form action="STarjetasVerificacion.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FolioVerificacion">
+                            <span class="marcadorRadio"></span>
+                            Folio Verificación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdVehiculo">
+                            <span class="marcadorRadio"></span>
+                            ID Vehículo
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Entidad">
+                            <span class="marcadorRadio"></span>
+                            Entidad
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Municipio">
+                            <span class="marcadorRadio"></span>
+                            Municipio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdCenVerificacion">
+                            <span class="marcadorRadio"></span>
+                            ID Centro Verificación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NoLineaVerificacion">
+                            <span class="marcadorRadio"></span>
+                            Número de Línea
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="TecnicoVerificador">
+                            <span class="marcadorRadio"></span>
+                            Técnico Verificador
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaExpedicion">
+                            <span class="marcadorRadio"></span>
+                            Fecha Expedición
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="HoraEntrada">
+                            <span class="marcadorRadio"></span>
+                            Hora Entrada
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="HoraSalida">
+                            <span class="marcadorRadio"></span>
+                            Hora Salida
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="MotivoVerificacion">
+                            <span class="marcadorRadio"></span>
+                            Motivo Verificación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Semestre">
+                            <span class="marcadorRadio"></span>
+                            Semestre
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Vigencia">
+                            <span class="marcadorRadio"></span>
+                            Vigencia
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="CodigoBarra">
+                            <span class="marcadorRadio"></span>
+                            Código de Barras
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="CodigoQR">
+                            <span class="marcadorRadio"></span>
+                            Código QR
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Tarjetas
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

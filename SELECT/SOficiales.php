@@ -1,18 +1,17 @@
 <?php
-    //Obtener datos del Frontend
+    // Obtener datos del Frontend
     $Criterio = $_REQUEST['Criterio'];
     $Atributo = $_REQUEST['Atributo'];
 
-    //Crear instrucción SQL
+    // Crear instrucción SQL
     $SQL = "SELECT * FROM Oficiales WHERE $Atributo LIKE '%$Criterio%'";
 
-    //Enviar la instruccion al SMBD
+    // Enviar la instrucción al SMBD
     include("../controlador.php");
     $Conexion = Conectar();
     $ResultSet = Ejecutar($Conexion, $SQL);
 
     $N = mysqli_num_rows($ResultSet);
-    $Columnas = mysqli_num_fields($ResultSet);
 
     if (isset($_GET['generar_csv'])) {
         header('Content-Type: text/csv');
@@ -27,7 +26,6 @@
         }
         
         fputcsv($output, ['Total de registros:', $N]);
-        
         fputcsv($output, ['']);
         fputcsv($output, ['Informacion del Sistema', '']);
         fputcsv($output, ['Servidor BD:', 'localhost']);
@@ -43,32 +41,24 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Resultados de Búsqueda</title>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }
-        </style>
+        <link rel='stylesheet' href='../styles/SResultadoInsert.css'>
+
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
     </head>
     <body>
-        <h2>Resultados de Búsqueda</h2>
-        <table>
-            <tr>
-                <th>IdOficial</th>
-                <th>Cargo</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-            </tr>";
+        <div class='contenedor'>
+            <h2><i class='fas fa-user-shield'></i> Resultados de Oficiales</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Oficial</th>
+                        <th>Cargo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                </thead>
+                <tbody>";
 
     while ($Fila = $ResultSet->fetch_assoc()) {
         echo "<tr>
@@ -76,15 +66,18 @@
                 <td>" . htmlspecialchars($Fila['Cargo']) . "</td>
                 <td>" . htmlspecialchars($Fila['Nombre']) . "</td>
                 <td>" . htmlspecialchars($Fila['Apellido']) . "</td>
-            </tr>";
+              </tr>";
     }
 
-    echo "</table>";
-    echo "<p>Registros Encontrados: " . $N . "</p>";
-
-    echo "<a href='?Criterio=" . urlencode($Criterio) . "&Atributo=" . urlencode($Atributo) . "&generar_csv=1'>
-            <button>Generar Archivo CSV</button>
-          </a>";
+    echo "</tbody>
+            </table>
+            <div class='acciones'>
+                <p class='registros'>Registros encontrados: " . $N . "</p>
+                <a href='?Criterio=" . urlencode($Criterio) . "&Atributo=" . urlencode($Atributo) . "&generar_csv=1' class='exportar'>
+                    <i class='fas fa-file-csv'></i> Exportar a CSV
+                </a>
+            </div>
+        </div>";
 
     Desconectar($Conexion);
 

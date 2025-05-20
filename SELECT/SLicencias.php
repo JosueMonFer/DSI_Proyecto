@@ -13,7 +13,6 @@
 
     // Procesamiento
     $N = mysqli_num_rows($ResultSet);
-    $Columnas = mysqli_field_count($Conexion);
 
     echo "<!DOCTYPE html>
     <html lang='es'>
@@ -21,42 +20,35 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Resultados de Búsqueda</title>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }   
-        </style>
+        <link rel='stylesheet' href='../styles/SResultadoInsert.css'>
+
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
     </head>
     <body>
-        <h2>Resultados de Búsqueda de Licencias</h2>
-        <table>
-            <tr>
-                <th>NoLicencia</th>
-                <th>Nombre</th>
-                <th>Foto</th>
-                <th>Observacion</th>
-                <th>FechaNac</th>
-                <th>FechaExped</th>
-                <th>FechaValid</th>
-                <th>Antiguedad</th>
-                <th>Firma</th>
-                <th>IdDomicilio</th>
-                <th>Restriccion</th>
-                <th>GrupoSanguineo</th>
-                <th>NoEmergencia</th>
-                <th>IdConductor</th>
-            </tr>";
+        <div class='contenedor'>
+            <h2><i class='fas fa-id-card'></i> Resultados de Licencias</h2>
+            <div class='tabla'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N° Licencia</th>
+                            <th>Nombre</th>
+                            <th>Foto</th>
+                            <th>Observación</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Fecha Expedición</th>
+                            <th>Fecha Validación</th>
+                            <th>Antigüedad</th>
+                            <th>Firma</th>
+                            <th>ID Domicilio</th>
+                            <th>Restricción</th>
+                            <th>Grupo Sanguíneo</th>
+                            <th>N° Emergencia</th>
+                            <th>ID Conductor</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
 
     while ($Fila = $ResultSet->fetch_assoc()) {
         echo "<tr>
@@ -77,8 +69,11 @@
               </tr>";
     }
 
-    echo "</table>";
-    echo "<p>Registros Encontrados: " . $N . "</p>";
+    echo "</tbody>
+                </table>
+            </div>
+            <p class='registros'>Registros encontrados: " . $N . "</p>
+        </div>";
 
     Desconectar($Conexion);
 

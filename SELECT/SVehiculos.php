@@ -13,7 +13,6 @@
 
     // Procesamiento
     $N = mysqli_num_rows($ResultSet);
-    $Columnas = mysqli_field_count($Conexion);
 
     echo "<!DOCTYPE html>
     <html lang='es'>
@@ -21,47 +20,39 @@
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title>Resultados de Búsqueda de Vehículos</title>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }   
-        </style>
+        <link rel='stylesheet' href='../styles/SResultadoInsert.css'>
+
+        <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
     </head>
     <body>
-        <h2>Resultados de Búsqueda de Vehículos</h2>
-        <table>
-            <tr>
-                <th>IdVehiculo</th>
-                <th>Cilindro</th>
-                <th>Combustible</th>
-                <th>Llanta</th>
-                <th>Asiento</th>
-                <th>Holograma</th>
-                <th>Color</th>
-                <th>Puerta</th>
-                <th>Modelo</th>
-                <th>Submarca</th>
-                <th>Placa</th>
-                <th>NumeroSerie</th>
-                <th>Clase</th>
-                <th>Carroceria</th>
-                <th>TipoServicio</th>
-                <th>NumeroMotor</th>
-                <th>Transmision</th>
-            </tr>";
+        <div class='contenedor'>
+            <h2><i class='fas fa-car-side'></i> Vehículos Registrados</h2>
+            <div class='tabla'>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Vehículo</th>
+                            <th>Cilindro</th>
+                            <th>Combustible</th>
+                            <th>Llanta</th>
+                            <th>Asiento</th>
+                            <th>Holograma</th>
+                            <th>Color</th>
+                            <th>Puertas</th>
+                            <th>Modelo</th>
+                            <th>Submarca</th>
+                            <th>Placa</th>
+                            <th>N° Serie</th>
+                            <th>Clase</th>
+                            <th>Carrocería</th>
+                            <th>Tipo Servicio</th>
+                            <th>N° Motor</th>
+                            <th>Transmisión</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
 
-    // Mostrar los resultados de la consulta
     while ($Fila = $ResultSet->fetch_assoc()) {
         echo "<tr>
                 <td>" . htmlspecialchars($Fila['IdVehiculo']) . "</td>
@@ -84,8 +75,11 @@
               </tr>";
     }
 
-    echo "</table>";
-    echo "<p>Registros Encontrados: " . $N . "</p>";
+    echo "</tbody>
+                </table>
+            </div>
+            <p class='registros'>Registros encontrados: " . $N . "</p>
+        </div>";
 
     Desconectar($Conexion);
 

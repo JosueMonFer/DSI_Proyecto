@@ -4,48 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Licencias</title>
+    <title>Buscar Licencias</title>
+    <link rel="stylesheet" href="../styles/SSelect.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <form action="SLicencias.php">
-        <label>Licencias</label>
-        <br>
-        <label>Criterio</label>
-        <input type="text" name="Criterio" id="Criterio">
-        <br>
-        <label>Atributo</label>
-        <br>
-        <input type="radio" name="Atributo" value="NoLicencia">NoLicencia
-        <br>
-        <input type="radio" name="Atributo" value="Nombre">Nombre
-        <br>
-        <input type="radio" name="Atributo" value="Foto">Foto
-        <br>
-        <input type="radio" name="Atributo" value="Observacion">Observacion
-        <br>
-        <input type="radio" name="Atributo" value="FechaNac">FechaNac
-        <br>
-        <input type="radio" name="Atributo" value="FechaExped">FechaExped
-        <br>
-        <input type="radio" name="Atributo" value="FechaValid">FechaValid
-        <br>
-        <input type="radio" name="Atributo" value="Antiguedad">Antiguedad
-        <br>
-        <input type="radio" name="Atributo" value="Firma">Firma
-        <br>
-        <input type="radio" name="Atributo" value="IdDomicilio">IdDomicilio
-        <br>
-        <input type="radio" name="Atributo" value="Restriccion">Restriccion
-        <br>
-        <input type="radio" name="Atributo" value="GrupoSanguineo">GrupoSanguineo
-        <br>
-        <input type="radio" name="Atributo" value="NoEmergencia">NoEmergencia
-        <br>
-        <input type="radio" name="Atributo" value="IdConductor">IdConductor
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <div class="formulario">
+            <h1 class="titulo">
+                <i class="fas fa-id-card icono"></i>
+                Buscar Licencias
+            </h1>
+
+            <form action="SLicencias.php" class="formularioBusqueda">
+                <div class="campo">
+                    <label for="Criterio" class="etiqueta">Término de Búsqueda</label>
+                    <input type="text" id="Criterio" name="Criterio" placeholder="Ingrese su criterio de búsqueda"
+                        class="entradaDatos">
+                </div>
+
+                <div class="opciones">
+                    <p class="etiqueta">Filtrar por:</p>
+                    <div class="grupoRadio">
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NoLicencia">
+                            <span class="marcadorRadio"></span>
+                            Número de Licencia
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Nombre">
+                            <span class="marcadorRadio"></span>
+                            Nombre
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Foto">
+                            <span class="marcadorRadio"></span>
+                            Foto
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Observacion">
+                            <span class="marcadorRadio"></span>
+                            Observación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaNac">
+                            <span class="marcadorRadio"></span>
+                            Fecha de Nacimiento
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaExped">
+                            <span class="marcadorRadio"></span>
+                            Fecha de Expedición
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="FechaValid">
+                            <span class="marcadorRadio"></span>
+                            Fecha de Validación
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Antiguedad">
+                            <span class="marcadorRadio"></span>
+                            Antigüedad
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Firma">
+                            <span class="marcadorRadio"></span>
+                            Firma
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdDomicilio">
+                            <span class="marcadorRadio"></span>
+                            ID Domicilio
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="Restriccion">
+                            <span class="marcadorRadio"></span>
+                            Restricción
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="GrupoSanguineo">
+                            <span class="marcadorRadio"></span>
+                            Grupo Sanguíneo
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="NoEmergencia">
+                            <span class="marcadorRadio"></span>
+                            Número de Emergencia
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="Atributo" value="IdConductor">
+                            <span class="marcadorRadio"></span>
+                            ID Conductor
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="enviar">
+                    <i class="fas fa-search iconoBoton"></i>
+                    Buscar Licencias
+                </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
