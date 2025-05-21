@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Licencias</title>
+    <title>Editar Licencia</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/SUpdate.css">
 </head>
-
 <body>
-    <?php
+    <div class="contenedor">
+        <?php
         include("../controlador.php");
 
         if (!isset($_GET['NoLicencia'])) {
-            echo "Falta el NoLicencia";
+            echo '<div class="mensaje-error">Falta el número de licencia</div>';
             exit;
         }
 
@@ -21,90 +23,150 @@
         $ResultSet = Ejecutar($Conexion, "SELECT * FROM Licencias WHERE NoLicencia = '$NoLicencia'");
         $Row = mysqli_fetch_assoc($ResultSet);
         Desconectar($Conexion);
-    ?>
+        ?>
+        
+        <h1 class="titulo">
+            <span class="icono">assignment_ind</span>
+            Editar Licencia
+        </h1>
 
-    <form method="get" action="ULicencias.php">
-        <label><strong>Editar Licencias</strong></label>
-        <br><br>
+        <form class="formularioEdicion" method="GET" action="ULicencias.php">
+            <div class="campo">
+                <label class="etiqueta">N° Licencia</label>
+                <input class="datos"
+                       type="number" 
+                       name="NoLicencia" 
+                       value="<?php echo $Row['NoLicencia']; ?>" 
+                       readonly>
+            </div>
 
-        <label>NoLicencia</label>
-        <br>
-        <input type="number" name="NoLicencia" id="NoLicencia" value="<?php echo $Row['NoLicencia']; ?>" readonly>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Nombre</label>
+                <input class="datos"
+                       type="text" 
+                       name="Nombre" 
+                       value="<?php echo $Row['Nombre']; ?>"
+                       required>
+            </div>
 
-        <label>Nombre</label>
-        <br>
-        <input type="text" name="Nombre" id="Nombre" value="<?php echo $Row['Nombre']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Foto</label>
+                <input class="datos"
+                       type="text" 
+                       name="Foto" 
+                       value="<?php echo $Row['Foto']; ?>"
+                       required>
+            </div>
 
-        <label>Foto</label>
-        <br>
-        <input type="text" name="Foto" id="Foto" value="<?php echo $Row['Foto']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Observación</label>
+                <input class="datos"
+                       type="text" 
+                       name="Observacion" 
+                       value="<?php echo $Row['Observacion']; ?>"
+                       required>
+            </div>
 
-        <label>Observacion</label>
-        <br>
-        <input type="text" name="Observacion" id="Observacion" value="<?php echo $Row['Observacion']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Fecha Nacimiento</label>
+                <input class="datos"
+                       type="date" 
+                       name="FechaNac" 
+                       value="<?php echo $Row['FechaNac']; ?>"
+                       required>
+            </div>
 
-        <label>FechaNac</label>
-        <br>
-        <input type="date" name="FechaNac" id="FechaNac" value="<?php echo $Row['FechaNac']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Fecha Expedición</label>
+                <input class="datos"
+                       type="date" 
+                       name="FechaExped" 
+                       value="<?php echo $Row['FechaExped']; ?>"
+                       required>
+            </div>
 
-        <label>FechaExped</label>
-        <br>
-        <input type="date" name="FechaExped" id="FechaExped" value="<?php echo $Row['FechaExped']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Fecha Validez</label>
+                <input class="datos"
+                       type="date" 
+                       name="FechaValid" 
+                       value="<?php echo $Row['FechaValid']; ?>"
+                       required>
+            </div>
 
-        <label>FechaValid</label>
-        <br>
-        <input type="date" name="FechaValid" id="FechaValid" value="<?php echo $Row['FechaValid']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Antigüedad</label>
+                <input class="datos"
+                       type="number" 
+                       name="Antiguedad" 
+                       value="<?php echo $Row['Antiguedad']; ?>">
+            </div>
 
-        <label>Antiguedad</label>
-        <br>
-        <input type="number" name="Antiguedad" id="Antiguedad" value="<?php echo $Row['Antiguedad']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Firma</label>
+                <input class="datos"
+                       type="text" 
+                       name="Firma" 
+                       value="<?php echo $Row['Firma']; ?>"
+                       required>
+            </div>
 
-        <label>Firma</label>
-        <br>
-        <input type="text" name="Firma" id="Firma" value="<?php echo $Row['Firma']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">ID Domicilio</label>
+                <input class="datos"
+                       type="number" 
+                       name="IdDomicilio" 
+                       value="<?php echo $Row['IdDomicilio']; ?>"
+                       required>
+            </div>
 
-        <label>IdDomicilio</label>
-        <br>
-        <input type="number" name="IdDomicilio" id="IdDomicilio" value="<?php echo $Row['IdDomicilio']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Restricción</label>
+                <input class="datos"
+                       type="text" 
+                       name="Restriccion" 
+                       value="<?php echo $Row['Restriccion']; ?>">
+            </div>
 
-        <label>Restriccion</label>
-        <br>
-        <input type="text" name="Restriccion" id="Restriccion" value="<?php echo $Row['Restriccion']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Grupo Sanguíneo</label>
+                <input class="datos"
+                       type="text" 
+                       name="GrupoSanguineo" 
+                       value="<?php echo $Row['GrupoSanguineo']; ?>">
+            </div>
 
-        <label>GrupoSanguineo</label>
-        <br>
-        <input type="text" name="GrupoSanguineo" id="GrupoSanguineo" value="<?php echo $Row['GrupoSanguineo']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Donador de Órganos</label>
+                <input class="datos"
+                       type="text" 
+                       name="DonadorOrgano" 
+                       value="<?php echo $Row['DonadorOrgano']; ?>">
+            </div>
 
-        <label>DonadorOrgano</label>
-        <br>
-        <input type="text" name="DonadorOrgano" id="DonadorOrgano" value="<?php echo $Row['DonadorOrgano']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">N° Emergencia</label>
+                <input class="datos"
+                       type="number" 
+                       name="NoEmergencia" 
+                       value="<?php echo $Row['NoEmergencia']; ?>"
+                       required>
+            </div>
 
-        <label>NoEmergencia</label>
-        <br>
-        <input type="number" name="NoEmergencia" id="NoEmergencia" value="<?php echo $Row['NoEmergencia']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">ID Conductor</label>
+                <input class="datos"
+                       type="number" 
+                       name="IdConductor" 
+                       value="<?php echo $Row['IdConductor']; ?>"
+                       required>
+            </div>
 
-        <label>IdConductor</label>
-        <br>
-        <input type="number" name="IdConductor" id="IdConductor" value="<?php echo $Row['IdConductor']; ?>" required>
-        <br>
-
-        <input type="submit" value="Actualizar Licencia">
-        <br>
-    </form>
+            <button type="submit" class="guardar">
+                <span class="material-icons">save</span>
+                Guardar Cambios
+            </button>
+        </form>
+    </div>
 </body>
-
 </html>

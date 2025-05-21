@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Tarjetas de Verificación</title>
+    <title>Editar Tarjeta Verificación</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/SUpdate.css">
 </head>
-
 <body>
-    <?php
+    <div class="contenedor">
+        <?php
         include("../controlador.php");
 
         if (!isset($_GET['FolioVerificacion'])) {
-            echo "Falta el FolioVerificacion";
+            echo '<div class="mensaje-error">❌ Falta el folio de verificación</div>';
             exit;
         }
 
@@ -21,90 +23,140 @@
         $ResultSet = Ejecutar($Conexion, "SELECT * FROM TarjetasDeVerificacion WHERE FolioVerificacion = '$FolioVerificacion'");
         $Row = mysqli_fetch_assoc($ResultSet);
         Desconectar($Conexion);
-    ?>
+        ?>
+        
+        <h1 class="titulo">
+            <span class="icono">verified</span>
+            Editar Tarjeta de Verificación
+        </h1>
 
-    <form method="get" action="UTarjetasVerificacion.php">
-        <label><strong>Editar Tarjeta de Verificación</strong></label>
-        <br><br>
+        <form class="formularioEdicion" method="GET" action="UTarjetasVerificacion.php">
+            <div class="campo">
+                <label class="etiqueta">Folio</label>
+                <input class="datos"
+                       type="number" 
+                       name="FolioVerificacion" 
+                       value="<?php echo $Row['FolioVerificacion']; ?>" 
+                       readonly>
+            </div>
 
-        <label>FolioVerificacion</label>
-        <br>
-        <input type="number" name="FolioVerificacion" id="FolioVerificacion" value="<?php echo $Row['FolioVerificacion']; ?>" readonly>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">ID Vehículo</label>
+                <input class="datos"
+                       type="number" 
+                       name="IdVehiculo" 
+                       value="<?php echo $Row['IdVehiculo']; ?>">
+            </div>
 
-        <label>IdVehiculo</label>
-        <br>
-        <input type="number" name="IdVehiculo" id="IdVehiculo" value="<?php echo $Row['IdVehiculo']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Entidad</label>
+                <input class="datos"
+                       type="text" 
+                       name="Entidad" 
+                       value="<?php echo $Row['Entidad']; ?>">
+            </div>
 
-        <label>Entidad</label>
-        <br>
-        <input type="text" name="Entidad" id="Entidad" value="<?php echo $Row['Entidad']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Municipio</label>
+                <input class="datos"
+                       type="text" 
+                       name="Municipio" 
+                       value="<?php echo $Row['Municipio']; ?>">
+            </div>
 
-        <label>Municipio</label>
-        <br>
-        <input type="text" name="Municipio" id="Municipio" value="<?php echo $Row['Municipio']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">ID Centro Verificación</label>
+                <input class="datos"
+                       type="number" 
+                       name="IdCenVerificacion" 
+                       value="<?php echo $Row['IdCenVerificacion']; ?>">
+            </div>
 
-        <label>IdCenVerificacion</label>
-        <br>
-        <input type="number" name="IdCenVerificacion" id="IdCenVerificacion" value="<?php echo $Row['IdCenVerificacion']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">N° Línea Verificación</label>
+                <input class="datos"
+                       type="number" 
+                       name="NoLineaVerificacion" 
+                       value="<?php echo $Row['NoLineaVerificacion']; ?>">
+            </div>
 
-        <label>NoLineaVerificacion</label>
-        <br>
-        <input type="number" name="NoLineaVerificacion" id="NoLineaVerificacion" value="<?php echo $Row['NoLineaVerificacion']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Técnico Verificador</label>
+                <input class="datos"
+                       type="number" 
+                       name="TecnicoVerificador" 
+                       value="<?php echo $Row['TecnicoVerificador']; ?>">
+            </div>
 
-        <label>TecnicoVerificador</label>
-        <br>
-        <input type="number" name="TecnicoVerificador" id="TecnicoVerificador" value="<?php echo $Row['TecnicoVerificador']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Fecha Expedición</label>
+                <input class="datos"
+                       type="date" 
+                       name="FechaExpedicion" 
+                       value="<?php echo $Row['FechaExpedicion']; ?>">
+            </div>
 
-        <label>FechaExpedicion</label>
-        <br>
-        <input type="date" name="FechaExpedicion" id="FechaExpedicion" value="<?php echo $Row['FechaExpedicion']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Hora Entrada</label>
+                <input class="datos"
+                       type="time" 
+                       name="HoraEntrada" 
+                       value="<?php echo $Row['HoraEntrada']; ?>">
+            </div>
 
-        <label>HoraEntrada</label>
-        <br>
-        <input type="time" name="HoraEntrada" id="HoraEntrada" value="<?php echo $Row['HoraEntrada']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Hora Salida</label>
+                <input class="datos"
+                       type="time" 
+                       name="HoraSalida" 
+                       value="<?php echo $Row['HoraSalida']; ?>">
+            </div>
 
-        <label>HoraSalida</label>
-        <br>
-        <input type="time" name="HoraSalida" id="HoraSalida" value="<?php echo $Row['HoraSalida']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Motivo Verificación</label>
+                <input class="datos"
+                       type="text" 
+                       name="MotivoVerificacion" 
+                       value="<?php echo $Row['MotivoVerificacion']; ?>">
+            </div>
 
-        <label>MotivoVerificacion</label>
-        <br>
-        <input type="text" name="MotivoVerificacion" id="MotivoVerificacion" value="<?php echo $Row['MotivoVerificacion']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Semestre</label>
+                <input class="datos"
+                       type="number" 
+                       name="Semestre" 
+                       value="<?php echo $Row['Semestre']; ?>">
+            </div>
 
-        <label>Semestre</label>
-        <br>
-        <input type="number" name="Semestre" id="Semestre" value="<?php echo $Row['Semestre']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Vigencia</label>
+                <input class="datos"
+                       type="date" 
+                       name="Vigencia" 
+                       value="<?php echo $Row['Vigencia']; ?>">
+            </div>
 
-        <label>Vigencia</label>
-        <br>
-        <input type="date" name="Vigencia" id="Vigencia" value="<?php echo $Row['Vigencia']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Código de Barras</label>
+                <input class="datos"
+                       type="text" 
+                       name="CodigoBarra" 
+                       value="<?php echo $Row['CodigoBarra']; ?>">
+            </div>
 
-        <label>CodigoBarra</label>
-        <br>
-        <input type="text" name="CodigoBarra" id="CodigoBarra" value="<?php echo $Row['CodigoBarra']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Código QR</label>
+                <input class="datos"
+                       type="text" 
+                       name="CodigoQR" 
+                       value="<?php echo $Row['CodigoQR']; ?>">
+            </div>
 
-        <label>CodigoQR</label>
-        <br>
-        <input type="text" name="CodigoQR" id="CodigoQR" value="<?php echo $Row['CodigoQR']; ?>">
-        <br>
-
-        <input type="submit" value="Actualizar Tarjeta de Verificación">
-        <br>
-    </form>
+            <button type="submit" class="guardar">
+                <span class="material-icons">save</span>
+                Guardar Cambios
+            </button>
+        </form>
+    </div>
 </body>
-
 </html>

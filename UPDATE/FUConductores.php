@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Conductores</title>
+    <title>Editar Conductor</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/SUpdate.css">
 </head>
-
 <body>
-    <?php
+    <div class="contenedor">
+        <?php
         include("../controlador.php");
 
         if (!isset($_GET['IdConductor'])) {
-            echo "Falta el IdConductor";
+            echo '<div class="mensaje-error">Falta el ID del conductor</div>';
             exit;
         }
 
@@ -21,50 +23,69 @@
         $ResultSet = Ejecutar($Conexion, "SELECT * FROM Conductores WHERE IdConductor = '$IdConductor'");
         $Row = mysqli_fetch_assoc($ResultSet);
         Desconectar($Conexion);
-    ?>
+        ?>
+        
+        <h1 class="titulo">
+            <span class="icono">directions_car</span>
+            Editar Conductor
+        </h1>
 
-    <form method="get" action="UConductores.php">
-        <label><strong>Editar Conductores</strong></label>
-        <br><br>
+        <form class="formularioEdicion" method="GET" action="UConductores.php">
+            <input type="hidden" name="IdConductor" value="<?php echo $Row['IdConductor']; ?>">
 
-        <label>IdConductor</label>
-        <br>
-        <input type="number" name="IdConductor" id="IdConductor" value="<?php echo $Row['IdConductor']; ?>" readonly>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">CURP</label>
+                <input class="datos"
+                       type="text" 
+                       name="Curp" 
+                       value="<?php echo $Row['Curp']; ?>">
+            </div>
 
-        <label>Curp</label>
-        <br>
-        <input type="text" name="Curp" id="Curp" value="<?php echo $Row['Curp']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Nombre</label>
+                <input class="datos"
+                       type="text" 
+                       name="Nombre" 
+                       value="<?php echo $Row['Nombre']; ?>">
+            </div>
 
-        <label>Nombre</label>
-        <br>
-        <input type="text" name="Nombre" id="Nombre" value="<?php echo $Row['Nombre']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Apellido</label>
+                <input class="datos"
+                       type="text" 
+                       name="Apellido" 
+                       value="<?php echo $Row['Apellido']; ?>">
+            </div>
 
-        <label>Apellido</label>
-        <br>
-        <input type="text" name="Apellido" id="Apellido" value="<?php echo $Row['Apellido']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">ID Domicilio</label>
+                <input class="datos"
+                       type="number" 
+                       name="IdDomicilio" 
+                       value="<?php echo $Row['IdDomicilio']; ?>">
+            </div>
 
-        <label>IdDomicilio</label>
-        <br>
-        <input type="number" name="IdDomicilio" id="IdDomicilio" value="<?php echo $Row['IdDomicilio']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Folio</label>
+                <input class="datos"
+                       type="number" 
+                       name="Folio" 
+                       value="<?php echo $Row['Folio']; ?>">
+            </div>
 
-        <label>Folio</label>
-        <br>
-        <input type="number" name="Folio" id="Folio" value="<?php echo $Row['Folio']; ?>">
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Número de Emergencia</label>
+                <input class="datos"
+                       type="number" 
+                       name="NoEmergencia" 
+                       value="<?php echo $Row['NoEmergencia']; ?>">
+            </div>
 
-        <label>NoEmergencia</label>
-        <br>
-        <input type="number" name="NoEmergencia" id="NoEmergencia" value="<?php echo $Row['NoEmergencia']; ?>">
-        <br>
-
-        <input type="submit" value="Actualizar Conductor">
-        <br>
-    </form>
+            <button type="submit" class="guardar">
+                <span class="material-icons">save</span>
+                Guardar Cambios
+            </button>
+        </form>
+    </div>
 </body>
-
 </html>

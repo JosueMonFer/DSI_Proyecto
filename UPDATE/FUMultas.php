@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Multas</title>
+    <title>Editar Multa</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/SUpdate.css">
 </head>
-
 <body>
-    <?php
+    <div class="contenedor">
+        <?php
         include("../controlador.php");
 
         if (!isset($_GET['IdMulta'])) {
-            echo "Falta el IdMulta";
+            echo '<div class="mensaje-error">Falta el ID de la multa</div>';
             exit;
         }
 
@@ -21,60 +23,103 @@
         $ResultSet = Ejecutar($Conexion, "SELECT * FROM Multas WHERE IdMulta = '$IdMulta'");
         $Row = mysqli_fetch_assoc($ResultSet);
         Desconectar($Conexion);
-    ?>
+        ?>
+        
+        <h1 class="titulo">
+            <span class="icono">monetization_on</span>
+            Editar Multa
+        </h1>
 
-    <form method="get" action="UMultas.php">
-        <label><strong>Editar Multas</strong></label>
-        <br><br>
+        <form class="formularioEdicion" method="GET" action="UMultas.php">
+            <div class="campo">
+                <label class="etiqueta">ID Multa</label>
+                <input class="datos"
+                       type="number" 
+                       name="IdMulta" 
+                       value="<?php echo $Row['IdMulta']; ?>" 
+                       readonly>
+            </div>
 
-        <label>IdMulta</label>
-        <br>
-        <input type="number" name="IdMulta" id="IdMulta" value="<?php echo $Row['IdMulta']; ?>" readonly>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Día</label>
+                <input class="datos"
+                       type="number" 
+                       name="Dia" 
+                       value="<?php echo $Row['Dia']; ?>"
+                       required
+                       min="1" max="31">
+            </div>
 
-        <label>Dia</label>
-        <br>
-        <input type="number" name="Dia" id="Dia" value="<?php echo $Row['Dia']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Mes</label>
+                <input class="datos"
+                       type="number" 
+                       name="Mes" 
+                       value="<?php echo $Row['Mes']; ?>"
+                       required
+                       min="1" max="12">
+            </div>
 
-        <label>Mes</label>
-        <br>
-        <input type="number" name="Mes" id="Mes" value="<?php echo $Row['Mes']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Año</label>
+                <input class="datos"
+                       type="number" 
+                       name="Anio" 
+                       value="<?php echo $Row['Anio']; ?>"
+                       required
+                       min="2000">
+            </div>
 
-        <label>Año</label>
-        <br>
-        <input type="number" name="Anio" id="Anio" value="<?php echo $Row['Anio']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Hora</label>
+                <input class="datos"
+                       type="time" 
+                       name="Hora" 
+                       value="<?php echo $Row['Hora']; ?>"
+                       required>
+            </div>
 
-        <label>Hora</label>
-        <br>
-        <input type="time" name="Hora" id="Hora" value="<?php echo $Row['Hora']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Folio Tarjeta Circulación</label>
+                <input class="datos"
+                       type="number" 
+                       name="FolioTarjetaCirculacion" 
+                       value="<?php echo $Row['FolioTarjetaCirculacion']; ?>"
+                       required>
+            </div>
 
-        <label>FolioTarjetaCirculacion</label>
-        <br>
-        <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" value="<?php echo $Row['FolioTarjetaCirculacion']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">ID Oficial</label>
+                <input class="datos"
+                       type="number" 
+                       name="IdOficial" 
+                       value="<?php echo $Row['IdOficial']; ?>"
+                       required>
+            </div>
 
-        <label>IdOficial</label>
-        <br>
-        <input type="number" name="IdOficial" id="IdOficial" value="<?php echo $Row['IdOficial']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">Folio Verificación</label>
+                <input class="datos"
+                       type="number" 
+                       name="FolioVerificacion" 
+                       value="<?php echo $Row['FolioVerificacion']; ?>"
+                       required>
+            </div>
 
-        <label>FolioVerificacion</label>
-        <br>
-        <input type="number" name="FolioVerificacion" id="FolioVerificacion" value="<?php echo $Row['FolioVerificacion']; ?>" required>
-        <br>
+            <div class="campo">
+                <label class="etiqueta">N° Licencia</label>
+                <input class="datos"
+                       type="number" 
+                       name="NoLicencia" 
+                       value="<?php echo $Row['NoLicencia']; ?>"
+                       required>
+            </div>
 
-        <label>NoLicencia</label>
-        <br>
-        <input type="number" name="NoLicencia" id="NoLicencia" value="<?php echo $Row['NoLicencia']; ?>" required>
-        <br>
-
-        <input type="submit" value="Actualizar Multa">
-        <br>
-    </form>
+            <button type="submit" class="guardar">
+                <span class="material-icons">save</span>
+                Guardar Cambios
+            </button>
+        </form>
+    </div>
 </body>
-
 </html>

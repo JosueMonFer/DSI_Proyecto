@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Tarjeta Verificación</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/SUpdate.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <span class="icono">search</span>
+            Buscar Tarjeta de Verificación
+        </h1>
+        
+        <form class="formularioBusqueda" action="FUTarjetasVerificacion.php" method="get">
+            <div class="campo">
+                <label class="etiqueta" for="FolioVerificacion">Folio de Verificación</label>
+                <input class="datos" 
+                       type="number" 
+                       name="FolioVerificacion" 
+                       id="FolioVerificacion" 
+                       required
+                       placeholder="Ingrese el folio de verificación">
+            </div>
+            
+            <button type="submit" class="buscar">
+                <span class="material-icons">edit</span>
+                Editar Tarjeta
+            </button>
+        </form>
+    </div>
+</body>
+</html>
