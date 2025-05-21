@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Multa</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles/SDelete.css">
 </head>
+
 <body>
-    <form action="DMultas.php" method="post">
-        <label>Eliminar Multa</label>
-        <br>
-        <label>IdMulta</label>
-        <br>
-        <input type="number" name="IdMulta" id="IdMulta" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <span class="icono">money_off</span>
+            Eliminar Multa
+        </h1>
+
+        <form class="formulario" action="DMultas.php" method="post">
+            <div class="campo">
+                <label class="etiqueta" for="IdMulta">ID de la Multa</label>
+                <input type="number" name="IdMulta" id="IdMulta" required placeholder="Ingrese el ID de la multa">
+            </div>
+
+            <button type="submit" class="eliminar">
+                <span class="material-icons">delete_forever</span>
+                Eliminar Multa
+            </button>
+        </form>
+    </div>
 </body>
+
 </html>

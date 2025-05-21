@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Tarjeta Circulacion</title>
+    <title>Eliminar Tarjeta Circulación</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles/SDelete.css">
 </head>
+
 <body>
-    <form action="DTarjetasCirculacion.php" method="post">
-        <label>Eliminar Tarjeta Circulacion</label>
-        <br>
-        <label>FolioTarjetaCirculacion</label>
-        <br>
-        <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <span class="icono">credit_card_off</span>
+            Eliminar Tarjeta de Circulación
+        </h1>
+
+        <form class="formulario" action="DTarjetasCirculacion.php" method="post">
+            <div class="campo">
+                <label class="etiqueta" for="FolioTarjetaCirculacion">Folio de la Tarjeta</label>
+                <input type="number" name="FolioTarjetaCirculacion" id="FolioTarjetaCirculacion" required
+                    placeholder="Ingrese el folio de la tarjeta">
+            </div>
+
+            <button type="submit" class="eliminar">
+                <span class="material-icons">delete_forever</span>
+                Eliminar Tarjeta
+            </button>
+        </form>
+    </div>
 </body>
+
 </html>

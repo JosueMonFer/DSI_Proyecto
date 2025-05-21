@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Centro Verificacion</title>
+    <title>Eliminar Centro de Verificación</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/SDelete.css">
 </head>
+
 <body>
-    <form action="DCentrosVerificacion.php" method="post">
-        <label>Eliminar Centro Verificacion</label>
-        <br>
-        <label>IdCenVerificacion</label>
-        <br>
-        <input type="number" name="IdCenVerificacion" id="IdCenVerificacion" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <span class="icono">delete_outline</span>
+            Eliminar Centro de Verificación
+        </h1>
+
+        <form class="formulario" action="DCentrosVerificacion.php" method="post">
+            <div class="campo">
+                <label class="etiqueta" for="idCentro">ID del Centro</label>
+                <input type="number" name="IdCenVerificacion" id="idCentro" required
+                    placeholder="Ingrese el ID del centro">
+            </div>
+
+            <button type="submit" class="eliminar">
+                <span class="material-icons">delete_forever</span>
+                Eliminar Centro
+            </button>
+        </form>
+    </div>
 </body>
+
 </html>

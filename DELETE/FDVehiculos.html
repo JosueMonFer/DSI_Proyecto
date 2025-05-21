@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Vehiculo</title>
+    <title>Eliminar Vehículo</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles/SDelete.css">
 </head>
+
 <body>
-    <form action="DVehiculos.php" method="post">
-        <label>Eliminar Vehiculo</label>
-        <br>
-        <label>IdVehiculo</label>
-        <br>
-        <input type="number" name="IdVehiculo" id="IdVehiculo" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <span class="icono">directions_car</span>
+            Eliminar Vehículo
+        </h1>
+
+        <form class="formulario" action="DVehiculos.php" method="post">
+            <div class="campo">
+                <label class="etiqueta" for="IdVehiculo">ID del Vehículo</label>
+                <input type="number" name="IdVehiculo" id="IdVehiculo" required
+                    placeholder="Ingrese el ID del vehículo">
+            </div>
+
+            <button type="submit" class="eliminar">
+                <span class="material-icons">delete_forever</span>
+                Eliminar Vehículo
+            </button>
+        </form>
+    </div>
 </body>
+
 </html>

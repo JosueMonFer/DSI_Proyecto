@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Tarjeta Verificacion</title>
+    <title>Eliminar Tarjeta Verificación</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles/SDelete.css">
 </head>
+
 <body>
-    <form action="DTarjetasVerificacion.php" method="post">
-        <label>Eliminar Tarjeta Verificacion</label>
-        <br>
-        <label>FolioVerificacion</label>
-        <br>
-        <input type="number" name="FolioVerificacion" id="FolioVerificacion" required="required">
-        <br>
-        <input type="submit">
-    </form>
+    <div class="contenedor">
+        <h1 class="titulo">
+            <span class="icono">assignment_late</span>
+            Eliminar Tarjeta de Verificación
+        </h1>
+
+        <form class="formulario" action="DTarjetasVerificacion.php" method="post">
+            <div class="campo">
+                <label class="etiqueta" for="FolioVerificacion">Folio de Verificación</label>
+                <input type="number" name="FolioVerificacion" id="FolioVerificacion" required
+                    placeholder="Ingrese el folio de verificación">
+            </div>
+
+            <button type="submit" class="eliminar">
+                <span class="material-icons">delete_forever</span>
+                Eliminar Tarjeta
+            </button>
+        </form>
+    </div>
 </body>
+
 </html>
