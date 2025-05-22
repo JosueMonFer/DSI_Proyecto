@@ -1,42 +1,45 @@
 <?php
-    $FolioTarjetaCirculacion=$_REQUEST['FolioTarjetaCirculacion'];
-    $Holograma=$_REQUEST['Holograma'];
-    $Vigencia=$_REQUEST['Vigencia'];
-    $Rfc=$_REQUEST['Rfc'];
-    $Localidad=$_REQUEST['Localidad'];
-    $Municipio=$_REQUEST['Municipio'];
-    $FechaExpedicion=$_REQUEST['FechaExpedicion'];
-    $CveVehicular=$_REQUEST['CveVehicular'];
-    $IdVehiculo=$_REQUEST['IdVehiculo'];
-    $IdPropietario=$_REQUEST['IdPropietario'];
+$FolioTarjetaCirculacion = $_REQUEST['FolioTarjetaCirculacion'];
+$Holograma = $_REQUEST['Holograma'];
+$Vigencia = $_REQUEST['Vigencia'];
+$Rfc = $_REQUEST['Rfc'];
+$Localidad = $_REQUEST['Localidad'];
+$Municipio = $_REQUEST['Municipio'];
+$FechaExpedicion = $_REQUEST['FechaExpedicion'];
+$CveVehicular = $_REQUEST['CveVehicular'];
+$IdVehiculo = $_REQUEST['IdVehiculo'];
+$IdPropietario = $_REQUEST['IdPropietario'];
 
-    /*
-    print("FolioTarjetaCirculacion = ".$FolioTarjetaCirculacion."<br>");
-    print("Holograma = ".$Holograma."<br>");
-    print("Vigencia = ".$Vigencia."<br>");
-    print("Rfc = ".$Rfc."<br>");
-    print("Localidad = ".$Localidad."<br>");
-    print("Municipio = ".$Municipio."<br>");
-    print("FechaExpedicion = ".$FechaExpedicion."<br>");
-    print("CveVehicular = ".$CveVehicular."<br>");
-    print("IdVehiculo = ".$IdVehiculo."<br>");
-    print("IdPropietario = ".$IdPropietario."<br>");
-    */
+$SQL = "INSERT INTO TarjetasCirculacion(FolioTarjetaCirculacion, Holograma, Vigencia, Rfc, Localidad, Municipio, FechaExpedicion, CveVehicular, IdVehiculo, IdPropietario) VALUES ('$FolioTarjetaCirculacion', '$Holograma', '$Vigencia', '$Rfc', '$Localidad', '$Municipio', '$FechaExpedicion', '$CveVehicular', '$IdVehiculo', '$IdPropietario')";
 
-    //Pasar a formar instrucciones SQL
+include("../controlador.php"); 
 
-    $SQL="INSERT INTO TarjetasCirculacion(FolioTarjetaCirculacion, Holograma, Vigencia, Rfc, Localidad, Municipio, FechaExpedicion, CveVehicular, IdVehiculo, IdPropietario) VALUES ('$FolioTarjetaCirculacion', '$Holograma', '$Vigencia', '$Rfc', '$Localidad', '$Municipio', '$FechaExpedicion', '$CveVehicular', '$IdVehiculo', '$IdPropietario')";
+$Conexion = Conectar();
+$ResultSet = Ejecutar($Conexion, $SQL);
+
+if($ResultSet == 1){
+    // Generar XML
+    $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><RespaldoTarjetaCirculacion/>');
     
-    include("../controlador.php"); 
+    $xml->addChild('FolioTarjetaCirculacion', $FolioTarjetaCirculacion);
+    $xml->addChild('Holograma', htmlspecialchars($Holograma));
+    $xml->addChild('Vigencia', $Vigencia);
+    $xml->addChild('Rfc', $Rfc);
+    $xml->addChild('Localidad', htmlspecialchars($Localidad));
+    $xml->addChild('Municipio', htmlspecialchars($Municipio));
+    $xml->addChild('FechaExpedicion', $FechaExpedicion);
+    $xml->addChild('CveVehicular', $CveVehicular);
+    $xml->addChild('IdVehiculo', $IdVehiculo);
+    $xml->addChild('IdPropietario', $IdPropietario);
 
-    $Conexion = Conectar();
-    $ResultSet = Ejecutar($Conexion, $SQL);
-    Desconectar($Conexion);
+    $nombreArchivo = '../RESPALDO/RespaldoTarjeta_'. $FolioTarjetaCirculacion. '.xml';
+    $xml->asXML($nombreArchivo);
+    
+    print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);
+}
+else{
+    print("Inserción fallida: ". $Conexion->error);
+}
 
-    if($ResultSet==1){
-        print("Incercion exitosa");
-    }
-    else{
-        print("Insercion fallida".$Conexion->error);
-    }
+Desconectar($Conexion);
 ?>

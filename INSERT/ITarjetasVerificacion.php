@@ -1,52 +1,54 @@
 <?php
-    $FolioVerificacion=$_GET['FolioVerificacion'];
-    $IdVehiculo=$_GET['IdVehiculo'];
-    $Entidad=$_GET['Entidad'];
-    $Municipio=$_GET['Municipio'];
-    $IdCenVerificacion=$_GET['IdCenVerificacion'];
-    $NoLineaVerificacion=$_GET['NoLineaVerificacion'];
-    $TecnicoVerificador=$_GET['TecnicoVerificador'];
-    $FechaExpedicion=$_GET['FechaExpedicion'];
-    $HoraEntrada=$_GET['HoraEntrada'];
-    $HoraSalida=$_GET['HoraSalida'];
-    $MotivoVerificacion=$_GET['MotivoVerificacion'];
-    $Semestre=$_GET['Semestre'];
-    $Vigencia=$_GET['Vigencia'];
-    $CodigoBarra=$_GET['CodigoBarra'];
-    $CodigoQR=$_GET['CodigoQR'];
+$FolioVerificacion = $_GET['FolioVerificacion'];
+$IdVehiculo = $_GET['IdVehiculo'];
+$Entidad = $_GET['Entidad'];
+$Municipio = $_GET['Municipio'];
+$IdCenVerificacion = $_GET['IdCenVerificacion'];
+$NoLineaVerificacion = $_GET['NoLineaVerificacion'];
+$TecnicoVerificador = $_GET['TecnicoVerificador'];
+$FechaExpedicion = $_GET['FechaExpedicion'];
+$HoraEntrada = $_GET['HoraEntrada'];
+$HoraSalida = $_GET['HoraSalida'];
+$MotivoVerificacion = $_GET['MotivoVerificacion'];
+$Semestre = $_GET['Semestre'];
+$Vigencia = $_GET['Vigencia'];
+$CodigoBarra = $_GET['CodigoBarra'];
+$CodigoQR = $_GET['CodigoQR'];
 
-    /*
-    print("FolioVerificacion = ".$FolioVerificacion."<br>");
-    print("IdVehiculo = ".$IdVehiculo."<br>");
-    print("Entidad = ".$Entidad."<br>");
-    print("Municipio = ".$Municipio."<br>");
-    print("IdCenVerificacion = ".$IdCenVerificacion."<br>");
-    print("NoLineaVerificacion = ".$NoLineaVerificacion."<br>");
-    print("TecnicoVerificador = ".$TecnicoVerificador."<br>");
-    print("FechaExpedicion = ".$FechaExpedicion."<br>");
-    print("HoraEntrada = ".$HoraEntrada."<br>");
-    print("HoraSalida = ".$HoraSalida."<br>");
-    print("MotivoVerificacion = ".$MotivoVerificacion."<br>");
-    print("Semestre = ".$Semestre."<br>");
-    print("Vigencia = ".$Vigencia."<br>");
-    print("CodigoBarra = ".$CodigoBarra."<br>");
-    print("CodigoQR = ".$CodigoQR."<br>");
-    */
+$SQL = "INSERT INTO TarjetasdeVerificacion(FolioVerificacion, IdVehiculo, Entidad, Municipio, IdCenVerificacion, NoLineaVerificacion, TecnicoVerificador, FechaExpedicion, HoraEntrada, HoraSalida, MotivoVerificacion, Semestre, Vigencia, CodigoBarra, CodigoQR) VALUES ('$FolioVerificacion', '$IdVehiculo', '$Entidad', '$Municipio', '$IdCenVerificacion', '$NoLineaVerificacion', '$TecnicoVerificador', '$FechaExpedicion', '$HoraEntrada', '$HoraSalida', '$MotivoVerificacion', '$Semestre', '$Vigencia', '$CodigoBarra', '$CodigoQR')";
 
-    //Pasar a formar instrucciones SQL
+include("../controlador.php"); 
 
-    $SQL="INSERT INTO TarjetasdeVerificacion(FolioVerificacion, IdVehiculo, Entidad, Municipio, IdCenVerificacion, NoLineaVerificacion, TecnicoVerificador, FechaExpedicion, HoraEntrada, HoraSalida, MotivoVerificacion, Semestre, Vigencia, CodigoBarra, CodigoQR) VALUES ('$FolioVerificacion', '$IdVehiculo', '$Entidad', '$Municipio', '$IdCenVerificacion', '$NoLineaVerificacion', '$TecnicoVerificador', '$FechaExpedicion', '$HoraEntrada', '$HoraSalida', '$MotivoVerificacion', '$Semestre', '$Vigencia', '$CodigoBarra', '$CodigoQR')";
+$Conexion = Conectar();
+$ResultSet = Ejecutar($Conexion, $SQL);
 
-    include("../controlador.php"); 
+if($ResultSet == 1){
+    $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><RespaldoTarjetaVerificacion/>');
+    
+    $xml->addChild('FolioVerificacion', $FolioVerificacion);
+    $xml->addChild('IdVehiculo', $IdVehiculo);
+    $xml->addChild('Entidad', htmlspecialchars($Entidad));
+    $xml->addChild('Municipio', htmlspecialchars($Municipio));
+    $xml->addChild('IdCenVerificacion', $IdCenVerificacion);
+    $xml->addChild('NoLineaVerificacion', $NoLineaVerificacion);
+    $xml->addChild('TecnicoVerificador', htmlspecialchars($TecnicoVerificador));
+    $xml->addChild('FechaExpedicion', $FechaExpedicion);
+    $xml->addChild('HoraEntrada', $HoraEntrada);
+    $xml->addChild('HoraSalida', $HoraSalida);
+    $xml->addChild('MotivoVerificacion', htmlspecialchars($MotivoVerificacion));
+    $xml->addChild('Semestre', $Semestre);
+    $xml->addChild('Vigencia', $Vigencia);
+    $xml->addChild('CodigoBarra', htmlspecialchars($CodigoBarra));
+    $xml->addChild('CodigoQR', htmlspecialchars($CodigoQR));
 
-    $Conexion = Conectar();
-    $ResultSet = Ejecutar($Conexion, $SQL);
-    Desconectar($Conexion);
+    $nombreArchivo = '../RESPALDO/RespaldoVerificacion_'. $FolioVerificacion. '.xml';
+    $xml->asXML($nombreArchivo);
+    
+    print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);
+}
+else{
+    print("Inserción fallida: ". $Conexion->error);
+}
 
-    if($ResultSet==1){
-        print("Incercion exitosa");
-    }
-    else{
-        print("Insercion fallida".$Conexion->error);
-    }
+Desconectar($Conexion);
 ?>

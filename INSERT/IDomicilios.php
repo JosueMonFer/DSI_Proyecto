@@ -7,18 +7,6 @@
     $Municipio=$_GET['Municipio'];
     $Estado=$_GET['Estado'];
 
-    /*
-    print("IdDomicilio = ".$IdDomicilio."<br>");
-    print("Calle = ".$Calle."<br>");
-    print("Colonia = ".$Colonia."<br>");
-    print("NoExterior = ".$NoExterior."<br>");
-    print("Cp = ".$Cp."<br>");
-    print("Municipio = ".$Municipio."<br>");
-    print("Estado = ".$Estado."<br>");
-    */
-
-    //Pasar a formar instrucciones SQL
-
     $SQL="INSERT INTO Domicilios VALUES ('$IdDomicilio', '$Calle', '$Colonia', '$NoExterior', '$Cp', '$Municipio', '$Estado')";
     
     include("../controlador.php"); 

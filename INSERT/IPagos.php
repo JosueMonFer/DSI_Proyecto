@@ -1,40 +1,42 @@
 <?php
-    $IdPago = $_POST['IdPago'];
-    $Nombre = $_POST['Nombre'];
-    $Apellido = $_POST['Apellido'];
-    $FechaNacimiento = $_POST['FechaNacimiento'];
-    $FechaExpedicion = $_POST['FechaExpedicion'];
-    $FechaValidacion = $_POST['FechaValidacion'];
-    $Monto = $_POST['Monto'];
-    $Firma = $_POST['Firma'];
-    $FolioTarjetaCirculacion = $_POST['FolioTarjetaCirculacion'];
+$IdPago = $_POST['IdPago'];
+$Nombre = $_POST['Nombre'];
+$Apellido = $_POST['Apellido'];
+$FechaNacimiento = $_POST['FechaNacimiento'];
+$FechaExpedicion = $_POST['FechaExpedicion'];
+$FechaValidacion = $_POST['FechaValidacion'];
+$Monto = $_POST['Monto'];
+$Firma = $_POST['Firma'];
+$FolioTarjetaCirculacion = $_POST['FolioTarjetaCirculacion'];
 
-    /*
-    print("IdPago = ".$IdPago."<br>");
-    print("Nombre = ".$Nombre."<br>");
-    print("Apellido = ".$Apellido."<br>");
-    print("FechaNacimiento = ".$FechaNacimiento."<br>");
-    print("FechaExpedicion = ".$FechaExpedicion."<br>");
-    print("FechaValidacion = ".$FechaValidacion."<br>");
-    print("Monto = ".$Monto."<br>");
-    print("Firma = ".$Firma."<br>");
-    print("FolioTarjetaCirculacion = ".$FolioTarjetaCirculacion."<br>");
-    */
+$SQL = "INSERT INTO Pagos (IdPago, Nombre, Apellido, FechaNacimiento, FechaExpedicion, FechaValidacion, Monto, Firma, FolioTarjetaCirculacion) VALUES ('$IdPago', '$Nombre', '$Apellido', '$FechaNacimiento', '$FechaExpedicion', '$FechaValidacion', '$Monto', '$Firma', '$FolioTarjetaCirculacion')";
 
-    //Pasar a formar instrucciones SQL
+include("../controlador.php"); 
 
-    $SQL="INSERT INTO Pagos (IdPago, Nombre, Apellido, FechaNacimiento, FechaExpedicion, FechaValidacion, Monto, Firma, FolioTarjetaCirculacion) VALUES ('$IdPago', '$Nombre', '$Apellido', '$FechaNacimiento', '$FechaExpedicion', '$FechaValidacion', '$Monto', '$Firma', '$FolioTarjetaCirculacion')";
+$Conexion = Conectar();
+$ResultSet = Ejecutar($Conexion, $SQL);
+
+if($ResultSet == 1){
+    $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><RespaldoPago/>');
     
-    include("../controlador.php"); 
+    $xml->addChild('IdPago', $IdPago);
+    $xml->addChild('Nombre', htmlspecialchars($Nombre));
+    $xml->addChild('Apellido', htmlspecialchars($Apellido));
+    $xml->addChild('FechaNacimiento', $FechaNacimiento);
+    $xml->addChild('FechaExpedicion', $FechaExpedicion);
+    $xml->addChild('FechaValidacion', $FechaValidacion);
+    $xml->addChild('Monto', $Monto);
+    $xml->addChild('Firma', htmlspecialchars($Firma));
+    $xml->addChild('FolioTarjetaCirculacion', $FolioTarjetaCirculacion);
 
-    $Conexion = Conectar();
-    $ResultSet = Ejecutar($Conexion, $SQL);
-    Desconectar($Conexion);
+    $nombreArchivo = '../RESPALDO/RespaldoPago_'. $IdPago. '.xml';
+    $xml->asXML($nombreArchivo);
+    
+    print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);
+}
+else{
+    print("Inserción fallida: ". $Conexion->error);
+}
 
-    if($ResultSet==1){
-        print("Incercion exitosa");
-    }
-    else{
-        print("Insercion fallida".$Conexion->error);
-    }
+Desconectar($Conexion);
 ?>
