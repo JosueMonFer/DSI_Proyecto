@@ -29,7 +29,7 @@ if($ResultSet == 1){
     $xml->addChild('Firma', htmlspecialchars($Firma));
     $xml->addChild('FolioTarjetaCirculacion', $FolioTarjetaCirculacion);
 
-    $nombreArchivo = '../RESPALDO/RespaldoPago_'. $IdPago. '.xml';
+    $nombreArchivo = '../RESPALDOS/Pagos/IdPago_'. $IdPago. '.xml';
     $xml->asXML($nombreArchivo);
     
     print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);

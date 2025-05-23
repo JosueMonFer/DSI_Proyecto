@@ -18,7 +18,6 @@ $Conexion = Conectar();
 $ResultSet = Ejecutar($Conexion, $SQL);
 
 if($ResultSet == 1){
-    // Generar XML
     $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><RespaldoTarjetaCirculacion/>');
     
     $xml->addChild('FolioTarjetaCirculacion', $FolioTarjetaCirculacion);
@@ -32,7 +31,7 @@ if($ResultSet == 1){
     $xml->addChild('IdVehiculo', $IdVehiculo);
     $xml->addChild('IdPropietario', $IdPropietario);
 
-    $nombreArchivo = '../RESPALDO/RespaldoTarjeta_'. $FolioTarjetaCirculacion. '.xml';
+    $nombreArchivo = '../RESPALDOS/TarjetasCirculacion/FolioCirculacion_'. $FolioTarjetaCirculacion. '.xml';
     $xml->asXML($nombreArchivo);
     
     print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);

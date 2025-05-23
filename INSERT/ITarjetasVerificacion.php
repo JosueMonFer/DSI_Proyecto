@@ -41,7 +41,7 @@ if($ResultSet == 1){
     $xml->addChild('CodigoBarra', htmlspecialchars($CodigoBarra));
     $xml->addChild('CodigoQR', htmlspecialchars($CodigoQR));
 
-    $nombreArchivo = '../RESPALDO/RespaldoVerificacion_'. $FolioVerificacion. '.xml';
+    $nombreArchivo = '../RESPALDOS/TarjetasVerificacion/FolioVerificacion_'. $FolioVerificacion. '.xml';
     $xml->asXML($nombreArchivo);
     
     print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);

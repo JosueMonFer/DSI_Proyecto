@@ -29,7 +29,7 @@ if($ResultSet == 1){
     $xml->addChild('FolioVerificacion', htmlspecialchars($FolioVerificacion));
     $xml->addChild('NoLicencia', $NoLicencia);
 
-    $nombreArchivo = '../RESPALDO/RespaldoMulta_'. $IdMulta. '.xml';
+    $nombreArchivo = '../RESPALDOS/Multas/IdMulta_'. $IdMulta. '.xml';
     $xml->asXML($nombreArchivo);
     
     print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);
