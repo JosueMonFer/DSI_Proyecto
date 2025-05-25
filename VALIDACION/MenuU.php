@@ -20,7 +20,7 @@ if (!isset($_SESSION['username']) || $_SESSION['rol'] !== 'usuario') {
 
 <body>
     <div class="encabezado">
-        <h1 class="titulo">BIENVENIDO, <?php echo $_SESSION['username']; ?> - CONTROL VEHICULAR</h1>
+        <h1 class="titulo">BIENVENIDO, <?php echo htmlspecialchars($_SESSION['username']); ?> - CONTROL VEHICULAR</h1>
     </div>
 
     <div class="contenedor">
@@ -49,4 +49,3 @@ if (!isset($_SESSION['username']) || $_SESSION['rol'] !== 'usuario') {
 </body>
 
 </html>
-

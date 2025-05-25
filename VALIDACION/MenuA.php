@@ -9,18 +9,21 @@ if (!isset($_SESSION['username']) || $_SESSION['rol'] !== 'admin') {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Control - Administración Vehicular</title>
-    <link rel="stylesheet" href="../styles/SMenus.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/SMenus.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
     <div class="encabezado">
         <h1 class="titulo">ADMINISTRADOR DE CONTROL VEHICULAR</h1>
-        <p style="text-align:center;">Bienvenido, administrador <?php echo $_SESSION['username']; ?> | <a href="../logout.php">Cerrar sesión</a></p>
+        <p style="text-align:center;">
+            Bienvenido, administrador <?php echo htmlspecialchars($_SESSION['username']); ?> | 
+            <a href="logout.php">Cerrar sesión</a>
+        </p>
     </div>
 
     <div class="contenedor">

@@ -35,9 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['rol'] = $rol_db;
 
                 if ($rol_db === "admin") {
-                    header("Location: MenuA.php");  // Cambia por tu página admin
+                    header("Location: MenuA.php");
                 } else {
-                    header("Location: MenuU.php");  // Cambia por tu página usuario
+                    header("Location: MenuU.php");
                 }
                 exit;
             } else {
@@ -54,4 +54,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $conexion->close();
 ?>
-
