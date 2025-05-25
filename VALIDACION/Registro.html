@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Registro de Usuario</title>
+</head>
+<body>
+    <h2>Registrar nuevo usuario</h2>
+    <form action="registro.php" method="post">
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <label>Key:</label><br>
+        <input type="text" name="key" required><br><br>
+
+        <label>Rol:</label><br>
+        <select name="rol" required>
+            <option value="usuario">Usuario</option>
+            <option value="admin">Administrador</option>
+        </select><br><br>
+
+        <input type="submit" value="Registrar">
+    </form>
+    <p><a href="login.html">Volver a Login</a></p>
+</body>
+</html>
