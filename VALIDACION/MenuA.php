@@ -19,11 +19,13 @@ if (!isset($_SESSION['username']) || $_SESSION['rol'] !== 'admin') {
 
 <body>
     <div class="encabezado">
+    <div class="contenidoEncabezado">
         <h1 class="titulo">ADMINISTRADOR DE CONTROL VEHICULAR</h1>
-        <p style="text-align:center;">
-            Bienvenido, administrador <?php echo htmlspecialchars($_SESSION['username']); ?> | 
-            <a href="logout.php">Cerrar sesión</a>
-        </p>
+        <div class="usuario">
+            <span class="bienvenida">Bienvenido, administrador <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span>
+            <a href="logout.php" class="logout">Cerrar sesión</a>
+        </div>
+    </div>
     </div>
 
     <div class="contenedor">
@@ -66,11 +68,11 @@ if (!isset($_SESSION['username']) || $_SESSION['rol'] !== 'admin') {
                         Actualizaciones
                     </a>
                     <ul class="submenu">
-                        <li><a href="../UPDATE/FULicencias.php"><i class="fas fa-id-card iconoSubmenu"></i>Licencias</a></li>
-                        <li><a href="../UPDATE/FUMultas.php"><i class="fas fa-exclamation-triangle iconoSubmenu"></i>Multas</a></li>
-                        <li><a href="../UPDATE/FUPagos.php"><i class="fas fa-credit-card iconoSubmenu"></i>Pagos</a></li>
-                        <li><a href="../UPDATE/FUTarjetasCirculacion.php"><i class="fas fa-car-side iconoSubmenu"></i>Tarjetas Circulación</a></li>
-                        <li><a href="../UPDATE/FUTarjetasVerificacion.php"><i class="fas fa-check-circle iconoSubmenu"></i>Tarjetas Verificación</a></li>
+                        <li><a href="../UPDATE/BULicencias.html"><i class="fas fa-id-card iconoSubmenu"></i>Licencias</a></li>
+                        <li><a href="../UPDATE/BUMultas.html"><i class="fas fa-exclamation-triangle iconoSubmenu"></i>Multas</a></li>
+                        <li><a href="../UPDATE/BUPagos.html"><i class="fas fa-credit-card iconoSubmenu"></i>Pagos</a></li>
+                        <li><a href="../UPDATE/BUTarjetasCirculacion.html"><i class="fas fa-car-side iconoSubmenu"></i>Tarjetas Circulación</a></li>
+                        <li><a href="../UPDATE/BUTarjetasVerificacion.html"><i class="fas fa-check-circle iconoSubmenu"></i>Tarjetas Verificación</a></li>
                     </ul>
                 </li>
 
