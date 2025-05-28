@@ -106,7 +106,7 @@ if (!isset($_SESSION['username']) || $_SESSION['rol'] !== 'admin') {
                         <li><a href="../DELETE/FDOficiales.html"><i class="fas fa-badge iconoSubmenu"></i>Oficiales</a></li>
                         <li><a href="../DELETE/FDPagos.html"><i class="fas fa-credit-card iconoSubmenu"></i>Pagos</a></li>
                         <li><a href="../DELETE/FDPropietarios.html"><i class="fas fa-id-badge iconoSubmenu"></i>Propietarios</a></li>
-                        <li><a href="../DELETE/FDarjetasCirculacion.html"><i class="fas fa-car-side iconoSubmenu"></i>Tarjetas Circulación</a></li>
+                        <li><a href="../DELETE/FDTarjetasCirculacion.html"><i class="fas fa-car-side iconoSubmenu"></i>Tarjetas Circulación</a></li>
                         <li><a href="../DELETE/FDTarjetasVerificacion.html"><i class="fas fa-check-circle iconoSubmenu"></i>Tarjetas Verificación</a></li>
                         <li><a href="../DELETE/FDVehiculos.html"><i class="fas fa-car iconoSubmenu"></i>Vehículos</a></li>
                     </ul>

@@ -98,6 +98,23 @@ input::placeholder {
     margin-top: 1rem;
 }
 
+.regresar {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
 .eliminar:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);

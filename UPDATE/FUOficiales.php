@@ -71,6 +71,10 @@
                 <span class="material-icons">save</span>
                 Guardar Cambios
             </button>
+            <button type="button" class="regresar" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+                Regresar
+            </button>
         </form>
     </div>
 </body>

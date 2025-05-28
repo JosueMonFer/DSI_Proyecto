@@ -51,7 +51,14 @@
     echo "</tbody>
             </table>
             <p class='registros'>Registros encontrados: " . $N . "</p>
-        </div>";
+            <div class='contenedorBotones'>
+                <button type='button' class='botonEnviar' onclick='history.back()'>
+                    <i class='fas fa-arrow-left'></i>
+                    Regresar
+                </button>
+            </div>
+        </div>"
+        ;
 
     Desconectar($Conexion);
 

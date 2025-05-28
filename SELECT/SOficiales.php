@@ -73,9 +73,12 @@
             </table>
             <div class='acciones'>
                 <p class='registros'>Registros encontrados: " . $N . "</p>
-                <a href='?Criterio=" . urlencode($Criterio) . "&Atributo=" . urlencode($Atributo) . "&generar_csv=1' class='exportar'>
-                    <i class='fas fa-file-csv'></i> Exportar a CSV
-                </a>
+                <div class='contenedorBotones'>
+                <button type='button' class='botonEnviar' onclick='history.back()'>
+                    <i class='fas fa-arrow-left'></i>
+                    Regresar
+                </button>
+            </div>
             </div>
         </div>";
 

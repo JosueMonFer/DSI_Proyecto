@@ -78,31 +78,41 @@ table {
     min-width: 1200px;
 }
 
-.acciones {
+.contenedorBotones {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1.5rem;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
-.exportar {
-    background: #10b981;
+.botonEnviar {
+    background: #4299e1;
     color: white;
-    padding: 0.8rem 1.5rem;
+    border: none;
+    padding: 0.8rem 1.8rem;
     border-radius: 0.5rem;
-    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.exportar:hover {
-    background: #059669;
+.botonEnviar:hover {
+    background: #3182ce;
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.exportar i {
+.botonEnviar:active {
+    transform: translateY(0);
+}
+
+.botonEnviar i {
     font-size: 1.1rem;
 }
