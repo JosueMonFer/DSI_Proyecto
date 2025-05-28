@@ -39,10 +39,17 @@
                 <input type="text" name="Apellido" id="Apellido" required placeholder="Apellido completo">
             </div>
 
-            <button type="submit" class="botonEnviar">
-                <i class="fas fa-id-badge"></i>
-                Registrar Oficial
-            </button>
+            <div class="contenedorBotones">
+                <button type="submit" class="botonEnviar">
+                    <i class="fas fa-id-badge"></i>
+                    Registrar Oficial
+                </button>
+                
+                <button type="button" class="botonEnviar" onclick="history.back()">
+                    <i class="fas fa-arrow-left"></i>
+                    Regresar
+                </button>
+            </div>
         </form>
     </div>
 </body>

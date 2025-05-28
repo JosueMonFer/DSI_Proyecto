@@ -19,50 +19,57 @@
             <div class="campo">  
                 <label class="etiqueta">ID Domicilio</label>  
                 <input type="number" name="IdDomicilio" id="IdDomicilio" required  
-                    placeholder="Identificador único">  
+                    placeholder="Identificador único" min="1">  
             </div>  
 
             <div class="campo">  
                 <label class="etiqueta">Calle</label>  
                 <input type="text" name="Calle" id="Calle" required  
-                    placeholder="Ej: Av. Revolución">  
+                    placeholder="Ej: Av. Revolución" pattern="[A-Za-zÁ-Úá-ú\s\.\-]+">  
             </div>  
 
             <div class="campo">  
                 <label class="etiqueta">Colonia</label>  
                 <input type="text" name="Colonia" id="Colonia" required  
-                    placeholder="Ej: Centro">  
+                    placeholder="Ej: Centro" pattern="[A-Za-zÁ-Úá-ú0-9\s\-]+">  
             </div>  
 
             <div class="campo">  
                 <label class="etiqueta">Número Exterior</label>  
                 <input type="number" name="NoExterior" id="NoExterior" required  
-                    placeholder="Ej: 123">  
+                    placeholder="Ej: 123" min="1">  
             </div>  
 
             <div class="campo">  
                 <label class="etiqueta">Código Postal</label>  
-                <input type="number" name="Cp" id="Cp" required  
-                    placeholder="5 dígitos">  
+                <input type="text" name="Cp" id="Cp" required  
+                    placeholder="5 dígitos" pattern="\d{5}" maxlength="5">  
             </div>  
 
             <div class="campo">  
                 <label class="etiqueta">Municipio</label>  
                 <input type="text" name="Municipio" id="Municipio" required  
-                    placeholder="Ej: Guadalajara">  
+                    placeholder="Ej: Guadalajara" pattern="[A-Za-zÁ-Úá-ú\s\-]+">  
             </div>  
 
             <div class="campo">  
                 <label class="etiqueta">Estado</label>  
                 <input type="text" name="Estado" id="Estado" required  
-                    placeholder="Ej: Jalisco">  
+                    placeholder="Ej: Jalisco" pattern="[A-Za-zÁ-Úá-ú\s\-]+">  
             </div>  
 
-            <button type="submit" class="botonEnviar">  
-                <i class="fas fa-map-pin"></i>  
-                Registrar Domicilio  
-            </button>  
+            <div class="contenedorBotones">
+                <button type="submit" class="botonEnviar">  
+                    <i class="fas fa-map-pin"></i>  
+                    Registrar Domicilio  
+                </button>
+                
+                <button type="button" class="botonEnviar" onclick="history.back()">  
+                    <i class="fas fa-arrow-left"></i>  
+                    Regresar  
+                </button>
+            </div>
         </form>  
     </div>  
 </body>  
-</html>  
+</html>

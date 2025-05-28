@@ -102,10 +102,17 @@
                 <input type="file" name="CodigoQR" id="CodigoQR" required placeholder="Ingrese el código QR">
             </div>
 
-            <button type="submit" class="botonEnviar">
-                <i class="fas fa-check-circle"></i>
-                Registrar Tarjeta
-            </button>
+            <div class="contenedorBotones">
+                <button type="submit" class="botonEnviar">
+                    <i class="fas fa-check-circle"></i>
+                    Registrar Tarjeta
+                </button>
+                
+                <button type="button" class="botonEnviar" onclick="history.back()">
+                    <i class="fas fa-arrow-left"></i>
+                    Regresar
+                </button>
+            </div>
         </form>
     </div>
 </body>

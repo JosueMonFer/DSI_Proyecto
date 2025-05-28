@@ -143,6 +143,29 @@ input::placeholder {
     box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
 }
 
+.contenedorBotones {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.botonEnviar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 25px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.botonEnviar:hover {
+    background: #34495e;
+}
+
 @media (max-width: 480px) {
     .contenedor {
         padding: 1.5rem;
