@@ -1,9 +1,6 @@
 <?php
-
-
-
 // Directorio
-$directorio = _DIR_ . '/../uploads/';
+$directorio = __DIR__ . '/../uploads/';
 
 // Crear carpeta si no existe
 if (!is_dir($directorio)) {

@@ -12,16 +12,17 @@
     $ResultSet = Ejecutar($Conexion, $SQL);
     
     if ($ResultSet == 1) {
-        $xml = new SimpleXMLElement('<RespaldoCentroVerificacion/>');
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><RespaldoCentroVerificacion/>');
+        
         $xml->addChild('IdCenVerificacion', $IdCenVerificacion);
         $xml->addChild('NoLinea', $NoLinea);
-        $xml->addChild('Verificacion', $Verificacion);
+        $xml->addChild('Verificacion', htmlspecialchars($Verificacion));
         $xml->addChild('IdDomicilio', $IdDomicilio);
         
-        $nombreArchivo = '../RESPALDO/RespaldoCentro'. $IdCenVerificacion. '.xml';
+        $nombreArchivo = '../RESPALDOS/CentrosVerificacion/IdCenVerificacion_' . $IdCenVerificacion . '.xml';
         $xml->asXML($nombreArchivo);
         
-        print("Inserción exitosa. ". "Respaldo XML creado en: ". $nombreArchivo);
+        print("Inserción exitosa. Respaldo XML creado en: ". $nombreArchivo);
     } else {
         print("Inserción fallida: ". $Conexion->error);
     }

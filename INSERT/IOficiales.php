@@ -1,30 +1,32 @@
 <?php
-    $IdOficial=$_REQUEST['IdOficial'];
-    $Cargo=$_REQUEST['Cargo'];
-    $Nombre=$_REQUEST['Nombre'];
-    $Apellido=$_REQUEST['Apellido'];
+    $IdOficial = $_REQUEST['IdOficial'];
+    $Cargo = $_REQUEST['Cargo'];
+    $Nombre = $_REQUEST['Nombre'];
+    $Apellido = $_REQUEST['Apellido'];
 
-    /*
-    print("IdOficial = ".$IdOficial."<br>");
-    print("Cargo = ".$Cargo."<br>");
-    print("Nombre = ".$Nombre."<br>");
-    print("Apellido = ".$Apellido."<br>");
-    */
-    
-    //Pasar a formar instrucciones SQL
-
-    $SQL="INSERT INTO Oficiales VALUES ('$IdOficial', '$Cargo', '$Nombre', '$Apellido')";
+    $SQL = "INSERT INTO Oficiales VALUES ('$IdOficial', '$Cargo', '$Nombre', '$Apellido')";
 
     include("../controlador.php"); 
 
     $Conexion = Conectar();
     $ResultSet = Ejecutar($Conexion, $SQL);
-    Desconectar($Conexion);
 
-    if($ResultSet==1){
-        print("Incercion exitosa");
+    if($ResultSet == 1){
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><RespaldoOficial/>');
+        
+        $xml->addChild('IdOficial', $IdOficial);
+        $xml->addChild('Cargo', htmlspecialchars($Cargo));
+        $xml->addChild('Nombre', htmlspecialchars($Nombre));
+        $xml->addChild('Apellido', htmlspecialchars($Apellido));
+        
+        $nombreArchivo = '../RESPALDOS/Oficiales/IdOficial_' . $IdOficial . '.xml';
+        $xml->asXML($nombreArchivo);
+        
+        print("Inserción exitosa. Respaldo XML creado en: " . $nombreArchivo);
     }
     else{
-        print("Insercion fallida".$Conexion->error);
+        print("Inserción fallida: " . $Conexion->error);
     }
+    
+    Desconectar($Conexion);
 ?>
