@@ -21,5 +21,7 @@
         print("1 Registro afectado");
     }
 
+    echo '<br><br><button onclick="window.history.back()">Regresar</button>';
+    
     Desconectar($Conexion);
 ?>
